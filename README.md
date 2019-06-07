@@ -3,7 +3,7 @@ A music equipment rental app.
 
 # Contribution by
 `Keyur`
-* test
+* test (created new branch)
 
 `Tundun`
 * test
