@@ -12,7 +12,7 @@ A music equipment rental app.
 * test
 
 `Albi`
-* test
+* test a push
 
 `Ehab`
 * test
