@@ -5,7 +5,7 @@ import Home from './pages/Home';
 import UserDashboard from './pages/UserDashboard';
 import NotFound from './pages/NotFound';
 
-import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
@@ -13,9 +13,9 @@ function App() {
       <div>
         <Nav />
         <switch>
-          <Route exact path="/" component={Home}/>
-          <Route exact path="/UserDashboard" component={UserDashboard}/>
-          <Route component={NotFound}/>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/saved" component={UserDashboard} />
+          <Route component={NotFound} />
         </switch>
       </div>
     </Router>
