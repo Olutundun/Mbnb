@@ -12,11 +12,11 @@ function App() {
     <Router>
       <div>
         <Nav />
-        <switch>
+        <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/saved" component={UserDashboard} />
+          <Route exact path="/UserDashboard" component={UserDashboard} />
           <Route component={NotFound} />
-        </switch>
+        </Switch>
       </div>
     </Router>
   );
