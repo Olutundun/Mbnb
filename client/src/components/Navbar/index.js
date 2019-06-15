@@ -1,18 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Navbar() {
-    return(
-        <div>
-            {/* <Link to="/">
-                <img src="/img/die.png" alt="20-sided-die" width="50" height="50"></img>
-            </Link> | &nbsp; */}
-            <Link to="/">Mbnb</Link> | &nbsp;
-            <Link to="/Signin">Sign in</Link> | &nbsp;
-            <Link to="/Signup">Sign up</Link> | &nbsp;
-            <Link to="/UserDashboard">User Dashboard</Link>
-        </div>
-    );
-}
 
+function Navbar() {
+    return (
+        <div>
+            <ul className="nav bg-dark nav-pills p-2">
+                <li className="nav-item m-2">
+                    <a className="nav-link active" href="/">Mbnb</a>
+                </li>
+                <li className="nav-item m-2">
+                    <a className="nav-link active" href="/Signin">Sign in</a>
+                </li>
+                <li className="nav-item m-2">
+                    <a className="nav-link active" href="/Signup">Sign Up</a>
+                </li>
+                <li className="nav-item m-2">
+                    <a className="nav-link active" href="/UserDashboard">User Dashboard</a>
+                </li>
+            </ul>
+        </div>
+            );
+        }
+        
 export default Navbar;
