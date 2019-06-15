@@ -11,7 +11,8 @@ A music equipment rental app.
 * test
 
 `Bryan`
-* test
+* test 
+I'm the coolest viking you know
 
 `Albi`
 * test a push
