@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const cors = require("cors");
 const express = require("express");
 const session = require('express-session');
@@ -27,11 +28,26 @@ var syncOptions = {
 };
 
 //serve up static assets
+=======
+const express = require("express");
+var cors = require('cors');
+
+const routes = require("./routes");
+const app = express();
+const PORT = process.env.PORT || 3001;
+
+// Configure body parsing for AJAX requests
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// Serve up static assets
+>>>>>>> 7523d29003b37790a70a1d72be4619b9526bd3db
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
 app.use(cors());
+<<<<<<< HEAD
 app.use(routes);
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function () {
@@ -45,3 +61,12 @@ db.sequelize.sync(syncOptions).then(function () {
 });
 
 module.exports = app;
+=======
+// Add routes, both API and view
+app.use(routes);
+
+// Start the API server
+app.listen(PORT, () =>
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`)
+);
+>>>>>>> 7523d29003b37790a70a1d72be4619b9526bd3db
