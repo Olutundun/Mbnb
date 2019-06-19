@@ -4,6 +4,7 @@ const session = require('express-session');
 const db = require("./models");
 const app = express();
 const routes = require("./routes");
+const passport = require("passport")
 
 const PORT = process.env.PORT || 3001;
 
@@ -24,6 +25,9 @@ app.use(session({
   resave: true,
   saveUninitialized: true
 }));
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 var syncOptions = {
   force: false
