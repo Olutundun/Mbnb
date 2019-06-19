@@ -9,6 +9,9 @@ A music equipment rental app.
 
 `Tundun`
 * test
+* created folder structure and database
+* added sequelize and routes
+* added passport for user authentication
 
 `Bryan`
 * test 
