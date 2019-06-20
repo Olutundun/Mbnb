@@ -17,7 +17,7 @@ I'm the coolest viking you know
 I aligned the navbar and added the home page
 
 `Albi`
-* test a push
+* added user dashboard, work in progress
 
 `Ehab`
 * test (testing branch)
