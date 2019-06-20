@@ -13,8 +13,8 @@ A music equipment rental app.
 
 `Bryan`
 * test 
-I'm the coolest viking you know
-I aligned the navbar and added the home page
+*I'm the coolest viking you know
+*I aligned the navbar and added the home page
 
 `Albi`
 * added user dashboard, work in progress
