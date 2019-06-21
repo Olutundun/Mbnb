@@ -1,6 +1,5 @@
 import React from 'react';
 import Nav from './components/Navbar';
-
 import Home from './pages/Home';
 import UserDashboard from './pages/UserDashboard';
 import NotFound from './pages/NotFound';
