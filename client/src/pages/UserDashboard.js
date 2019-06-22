@@ -1,5 +1,6 @@
 import React from "react";
 import "./UserDashboard.css";
+// import Modal from "./src/components/Modal/index.js";
 
 function UserDashboard() {
     return(
@@ -60,7 +61,10 @@ function UserDashboard() {
        
         
     );
+    
 }
+
+
 
 
 
