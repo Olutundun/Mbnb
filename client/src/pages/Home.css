@@ -1,14 +1,21 @@
 
-#main-jumbo {
+/* #main-jumbo {
     background-image: url("/images/guitars-amps.jpg");
     background-position: center; 
     background-repeat: no-repeat; 
     background-size: cover;
-    height: 15rem;
-}
+    height: 20rem;
+} */
 
 #headline  {
     background-color: #ffffff;opacity: 0.7;
-    padding: 1rem;
+    /* font-size: 12px; */
 
+}
+body {
+    background-image: url("/images/guitars-amps.jpg");
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    min-height: 100vh;
 }
