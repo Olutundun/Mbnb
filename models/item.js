@@ -21,6 +21,9 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.BOOLEAN,
       defaultValue: false
     },
+    category: {
+      type: DataTypes.STRING
+    },
     images: DataTypes.STRING,
     postedBy: DataTypes.TEXT
   });
