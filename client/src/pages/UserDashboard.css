@@ -1,4 +1,16 @@
 html body div#root div div.container.p-5 {
-
-    background-color: #ffffff;opacity: 0.7;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    background-color: #e9e4dd;opacity: 0.95;
+    border-radius: 25px;
 }
+
+h1 {
+    border-bottom: 3px solid #000000;
+}
+img{
+    max-width:180px;
+  }
+  input[type=file]{
+  padding:10px;
+  background:#2d2d2d;}
