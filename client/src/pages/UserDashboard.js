@@ -1,8 +1,30 @@
 import React from "react";
 import "./UserDashboard.css";
 // import Modal from "./src/components/Modal/index.js";
+import axios from 'axios';
 
-function UserDashboard() {
+
+class UserDashboard extends React.Component {
+
+  state = {
+    image: null
+  }
+  fileSelectedHandler = event => {
+    console.log(event.target.files[0]);
+  }
+  fileSelectedHandler = (event) => {
+    this.setState({
+      image: event.target.files[0]
+    })
+    
+  let reader= new FileReader();
+  reader.readAsDataURL(event.target.files[0])
+  
+  reader.onload = (event) => {
+    console.warn("img data" + event.target.result);
+  }
+  }
+render() {
     return(
         
 <div className="container p-5">
@@ -81,17 +103,9 @@ function UserDashboard() {
       <option>Keyboards</option>
     </select>
   </div>
-      <p>Upload and Image</p>
-  <div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-  </div>
-  <div class="custom-file">
-    <input type="file" class="custom-file-input" id="inputGroupFile01"
-      aria-describedby="inputGroupFileAddon01"></input>
-    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-  </div>
-</div>
+  <p>Choose an image of your gear to upload</p>
+      <input type="file" onChange={this.fileSelectedHandler}></input>
+      <button onClick={this.fileUploadHandler} className="btn btn-danger">Upload File</button>
       <br></br>
       <br></br>
       <button type="submit" class="btn btn-primary">Submit</button>
@@ -102,7 +116,7 @@ function UserDashboard() {
        
         
     );
-    
+  }
 }
 
 
