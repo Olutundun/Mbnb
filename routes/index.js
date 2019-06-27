@@ -3,7 +3,7 @@ const router = require("express").Router();
 const itemRoutes = require("./api/itemRoutes");
 
 //API routes
-router.use("/api", itemRoutes);
+router.use("/", itemRoutes);
 
 //if no API routes are hit, send the react app
 router.use(function(req, res) {
