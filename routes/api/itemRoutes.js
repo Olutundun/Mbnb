@@ -2,7 +2,7 @@ const db = require("../../models")
 const router = require("express").Router();
 
 router
-    .route("/items")
+    .route("/api/items")
      .get((req, res) => {
          db.Item.findAll({}).then(function(item) {
              console.log(item)
