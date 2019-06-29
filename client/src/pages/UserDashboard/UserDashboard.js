@@ -1,21 +1,42 @@
 import React, { Component } from "react";
 import "./UserDashboard.css";
 // import { striped, bordered, hover } from 'react-bootstrap';
-
-
 // import Modal from "./src/components/Modal/index.js";
 
 class UserDashboard extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = { posts: [] };
+  state = {
+    posts: [],
+    itemName: "",
+    itemDescription: "",
+    cost: "",
+    category: "",
+    images: ""
 
-    fetch('http://localhost:3001/api/items')
-      .then(response => response.json())
-      .then(posts => (this.setState({ posts }))
-      )
   }
+
+  handleFormSubmit = (event) => {
+    event.preventDefault();
+    console.log("submitted!")
+    const formData = {
+      itemName: this.state.itemName,
+      itemDescription: this.state.itemDescription,
+      cost: this.state.cost,
+      category: this.state.category,
+      image: this.state.images
+    }
+    console.log(formData)
+    console.log(formData.itemName)
+  }
+
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    })
+    //console.log("value is " + value);
+  };
 
   render() {
     return (
@@ -51,42 +72,38 @@ class UserDashboard extends Component {
 
         <form>
           <div className="container form-group postForm">
-          <button className="btn btn-dark">post new rental</button>
-        <br></br>
-        <br></br>
-            <label for="exampleInputName">Item Name</label>
-            <input type="name" class="form-control" id="exampleInputItem" aria-describedby="emailHelp" placeholder="Enter Item name"></input>
-          
-            <label for="exampleInputDescription">Item description</label>
-            <input type="description" class="form-control" id="exampleInputDescription" placeholder="Enter Item Description"></input>
-         
-            <label for="exampleInputPassword1">Cost</label>
-            <input type="description" class="form-control" id="exampleInputDescription" placeholder="Average Cost"></input>
-          
-            <label for="exampleFormControlSelect1">Category select</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <button className="btn btn-dark">post new rental</button>
+            <br></br>
+            <br></br>
+            <label htmlFor="exampleInputName">Item Name</label>
+            <input name="itemName" value={this.state.itemName} onChange={this.handleInputChange} type="name" className="form-control" id="exampleInputItem" aria-describedby="emailHelp" placeholder="Enter Item name"></input>
+
+            <label htmlFor="exampleInputDescription">Item description</label>
+            <input name="itemDescription" value={this.state.itemDescription} onChange={this.handleInputChange} type="description" className="form-control" id="exampleInputDescription" placeholder="Enter Item Description"></input>
+
+            <label htmlFor="exampleInputPassword1">Cost</label>
+            <input name="cost" value={this.state.cost} onChange={this.handleInputChange} type="description" className="form-control" id="exampleInputDescription" placeholder="Average Cost"></input>
+
+            <label htmlFor="exampleFormControlSelect1">Category select</label>
+            <select name="category" value={this.state.category} onChange={this.handleInputChange} className="form-control" id="exampleFormControlSelect1">
               <option>Guitar/Base</option>
               <option>Drum sets</option>
               <option>DJ Equipment</option>
               <option>Stage lighting</option>
               <option>Keyboards</option>
             </select>
-          
-          <p>Upload an Image</p>
-        
+            <p>Upload an Image</p>
             <div className="custom-file">
-            <input type="file" class="custom-file-input" id="inputGroupFile01"
+              <input type="file" className="custom-file-input" id="inputGroupFile01"
                 aria-describedby="inputGroupFileAddon01"></input>
-              <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+              <label className="custom-file-label" htmlFor="inputGroupFile01">Choose file</label>
               <br></br>
               <br></br>
-            <button type="upload" className="btn btn-dark">Upload</button>
+              <button type="upload" className="btn btn-dark">Upload</button>
             </div>
-              
-          
-          <br></br>
-          <br></br>
-          <button type="submit" className="btn btn-primary">Submit</button>
+            <br></br>
+            <br></br>
+            <button onClick={this.handleFormSubmit} type="submit" className="btn btn-primary">Submit</button>
           </div>
         </form>
 

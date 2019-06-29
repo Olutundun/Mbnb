@@ -9,22 +9,6 @@ import Signup from './pages/Signup/Signup';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends Component {
-  
-  state = {  
-    username : "",
-    email: "",
-    password: "",
-    user: ''
-  }
-
-  handleInputChange = (event) =>  {
-     this.setState({myVal: ''})
-  };
-
-  handleSubmit(event) {
-    alert('submitted');
-    event.preventDefault();
-  }
 
   render() { 
     return ( 
@@ -34,7 +18,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/UserDashboard" component={UserDashboard} />
-          <Route exact path="/Signin" component={() => <Signin />} />
+          <Route exact path="/Signin" component={() => <Signin/>} />
           <Route exact path="/Signup" component={Signup} />
           <Route component={NotFound} />
         </Switch>

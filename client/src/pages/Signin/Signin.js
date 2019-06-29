@@ -16,12 +16,12 @@ class Signin extends Component {
             <form onSubmit={this.handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="Email"> Email Address</label>
-                    <input type="email" className="form-control" id="email" aria-describedby="emailHelp"  placeholder="Enter email"></input>
+                    <input onChange={this.handleInputChange} type="email" className="form-control" id="email" aria-describedby="emailHelp"  placeholder="Enter email"></input>
                     <small id="emailHelp" className="form-text text-muted"> We''ll never share your email with anyone else.</small>
                 </div>
                 <div className="form-group">
                     <label htmlFor="Password"> Password </label>
-                    <input type="password" className="form-control" id="Password" placeholder="Password"></input>
+                    <input onChange={this.handleInputChange} type="password" className="form-control" id="Password" placeholder="Password"></input>
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
             </form>
