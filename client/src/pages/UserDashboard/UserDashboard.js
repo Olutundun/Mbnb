@@ -8,7 +8,16 @@ import RentalModal from "../../components/Modal";
 // import Modal from "./src/components/Modal/index.js";
 
 class UserDashboard extends Component {
-  
+ 
+  constructor(props) {
+    super(props);
+    // this.state = { posts: [] };
+
+    fetch('http://localhost:3001/api/items')
+      .then(response => response.json())
+      .then(posts => (this.setState({ posts }))
+      )
+  }
 
   state = {
     posts: [],
@@ -90,7 +99,7 @@ class UserDashboard extends Component {
           Open the modal
         </button>
 
-        <RentalModal />
+        
       
 
 
