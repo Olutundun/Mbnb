@@ -1,18 +1,14 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import "./UserDashboard.css";
 import axios from "axios";
-import Modal from "../../components/Modal";
-import RentalModal from "../../components/Modal";
+//import Modal from "../../components/Modal";
+//import RentalModal from "../../components/Modal";
 // import { striped, bordered, hover } from 'react-bootstrap';
 // import Modal from "./src/components/Modal/index.js";
 
 class UserDashboard extends Component {
- 
   constructor(props) {
     super(props);
-    // this.state = { posts: [] };
-
     fetch('http://localhost:3001/api/items')
       .then(response => response.json())
       .then(posts => (this.setState({ posts }))
@@ -27,11 +23,10 @@ class UserDashboard extends Component {
     category: "",
     images: ""
   }
-  
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    
+
     console.log("submitted!")
     const formData = {
       itemName: this.state.itemName,
@@ -58,9 +53,6 @@ class UserDashboard extends Component {
     })
     //console.log("value is " + value);
   };
-
-  
-
 
   render() {
     return (
@@ -93,14 +85,14 @@ class UserDashboard extends Component {
 
         <br></br>
 
-      
-      
+
+
         <button onClick={this.toggleModal}>
           Open the modal
         </button>
 
-        
-      
+
+
 
 
         <form>
