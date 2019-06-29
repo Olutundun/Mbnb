@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./UserDashboard.css";
+import axios from "axios";
 // import { striped, bordered, hover } from 'react-bootstrap';
 // import Modal from "./src/components/Modal/index.js";
 
@@ -27,8 +28,14 @@ class UserDashboard extends Component {
     }
     console.log(formData)
     console.log(formData.itemName)
-  }
+    axios.post("api/items", formData)
+      .then(function (response) {
+        console.log(response)
+      }).catch(function (err) {
+        console.log(err)
+      })
 
+  }
 
   handleInputChange = event => {
     const { name, value } = event.target;
