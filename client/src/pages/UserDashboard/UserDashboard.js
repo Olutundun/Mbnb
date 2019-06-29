@@ -5,6 +5,7 @@ import axios from "axios";
 // import Modal from "./src/components/Modal/index.js";
 
 class UserDashboard extends Component {
+  
 
   state = {
     posts: [],
@@ -13,11 +14,11 @@ class UserDashboard extends Component {
     cost: "",
     category: "",
     images: ""
-
   }
 
   handleFormSubmit = (event) => {
     event.preventDefault();
+    
     console.log("submitted!")
     const formData = {
       itemName: this.state.itemName,
