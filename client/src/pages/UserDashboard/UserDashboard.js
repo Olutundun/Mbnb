@@ -1,10 +1,22 @@
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import "./UserDashboard.css";
 import axios from "axios";
+import Modal from "../../components/Modal";
+import RentalModal from "../../components/Modal";
 // import { striped, bordered, hover } from 'react-bootstrap';
 // import Modal from "./src/components/Modal/index.js";
 
 class UserDashboard extends Component {
+  constructor(props) {
+    super(props);
+    // this.state = { posts: [] };
+
+    fetch('http://localhost:3001/api/items')
+      .then(response => response.json())
+      .then(posts => (this.setState({ posts }))
+      )
+  }
 
   state = {
     posts: [],
@@ -12,9 +24,18 @@ class UserDashboard extends Component {
     itemDescription: "",
     cost: "",
     category: "",
-    images: ""
-
+    images: "",
+    modal: false
   }
+
+  
+
+  toggleModal = () => {
+    this.setState ({
+      isOpen: !this.state.isOpen
+    });
+  }
+  
 
   handleFormSubmit = (event) => {
     event.preventDefault();
@@ -45,6 +66,9 @@ class UserDashboard extends Component {
     //console.log("value is " + value);
   };
 
+  
+
+
   render() {
     return (
       <div className="container mainContainer p-5">
@@ -64,10 +88,10 @@ class UserDashboard extends Component {
             {this.state.posts.map(post =>
               <tr key={post.id}>
                 <td>{post.id}</td>
-                <td>{post.item_name}</td>
+                <td>{post.itemName}</td>
                 <td>{post.images}</td>
-                <td>{post.day_cost}</td>
-                <td>{post.item_description}</td>
+                <td>{post.cost}</td>
+                <td>{post.itemDescription}</td>
                 <td>{post.category}</td>
               </tr>
             )}
@@ -75,6 +99,15 @@ class UserDashboard extends Component {
         </table>
 
         <br></br>
+
+      
+      
+        <button onClick={this.toggleModal}>
+          Open the modal
+        </button>
+
+        <RentalModal />
+      
 
 
         <form>
