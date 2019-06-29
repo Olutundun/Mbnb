@@ -8,19 +8,7 @@ import RentalModal from "../../components/Modal";
 // import Modal from "./src/components/Modal/index.js";
 
 class UserDashboard extends Component {
-<<<<<<< HEAD
-  constructor(props) {
-    super(props);
-    // this.state = { posts: [] };
-
-    fetch('http://localhost:3001/api/items')
-      .then(response => response.json())
-      .then(posts => (this.setState({ posts }))
-      )
-  }
-=======
   
->>>>>>> 4396210fb773146fec65c4b2114f8af3dbc8be4f
 
   state = {
     posts: [],
@@ -28,20 +16,7 @@ class UserDashboard extends Component {
     itemDescription: "",
     cost: "",
     category: "",
-<<<<<<< HEAD
-    images: "",
-    modal: false
-  }
-
-  
-
-  toggleModal = () => {
-    this.setState ({
-      isOpen: !this.state.isOpen
-    });
-=======
     images: ""
->>>>>>> 4396210fb773146fec65c4b2114f8af3dbc8be4f
   }
   
 
