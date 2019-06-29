@@ -7,7 +7,10 @@ export default{
         return axios.get("/api/items")
     },
     // get items with the id
-    getItem: function(id) {
-        return axios.get("/api/items" + id)
+    createUser: function() {
+        return axios.get("/api/users")
+    },
+    postItem: function() {
+        return axios.post("/api/items")
     }
 }

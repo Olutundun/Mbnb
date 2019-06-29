@@ -1,0 +1,22 @@
+.mainContainer  {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    background-color: #e9e4dd;opacity: 0.95;
+    border-radius: 25px;
+}
+
+h1 {
+    border-bottom: 3px solid #000000;
+}
+img{
+    max-width:180px;
+  }
+  input[type=file]{
+  padding:10px;
+  background:#2d2d2d;
+}
+.postForm{
+    background-color:#2d2d2d;
+    background: #e9e4dd
+
+}

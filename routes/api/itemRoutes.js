@@ -2,28 +2,22 @@ const db = require("../../models")
 const router = require("express").Router();
 
 router
-    .route("/items")
-     .get((req, res) => {
-         db.Item.findAll({}).then(function(item) {
-             console.log(item)
-             res.json(item);
+    .route("/api/items")
+    .get((req, res) => {
+        db.Item.findAll({}).then(function (item) {
+            //console.log(item)
+            res.json(item);
         })
     });
-    //     .get((req, res) => {
-    //         db.Item.find(({}) => {
-    //             res.json(dbItem);
-    //         })
-    // });
-    // .post(itemController.create);
 
-//matches with "/api/item"
-// router
-//     .route("/:id")
-//     .get(itemController.findById)
-//     .delete(itemController.remove);
-router.route("/uploads")
-.post(req, res) => {
+router
+    .route("/api/items")
+    .post((req, res) => {
+        db.Item.create(req.body).then(function (item) {
+            console.log(item)
+            res.json(item)
+        })
+    })
 
-}
 
 module.exports = router;

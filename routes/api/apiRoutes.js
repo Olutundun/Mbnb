@@ -4,10 +4,10 @@ var passport = require("../../config/passport");
 // Routes
 
 module.exports = function (app) {
-  app.post("/api/Signin", passport.authenticate("local"), function (req, res) {
+  app.post("/user/Signin", passport.authenticate("local"), function (req, res) {
     res.json("/users");
   });
-  app.post("/api/Signup", function (req, res) {
+  app.post("/user/Signup", function (req, res) {
     console.log(req.body);
     db.User.create({
       username: req.body.name,
