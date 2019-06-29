@@ -25,15 +25,14 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING
     },
     images: DataTypes.STRING,
-    postedBy: DataTypes.TEXT
   });
-  // Item.associate = function (models) {
-  //   Item.belongsTo(models.User, {
-  //     foreignKey: {
-  //       allowNull: false
-  //     }
-  //   });
-  // };
+  Item.associate = function (models) {
+    Item.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
 
   return Item;
 };
