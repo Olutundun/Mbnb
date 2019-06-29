@@ -9,5 +9,8 @@ export default{
     // get items with the id
     getItem: function(id) {
         return axios.get("/api/items" + id)
+    },
+    postItem: function() {
+        return axios.post("api/items")
     }
 }

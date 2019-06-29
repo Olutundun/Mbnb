@@ -1,8 +1,10 @@
-import React from "react";
+import React, { Component } from 'react';
 
-function Signup() {
-    return(
-        <div className="container col-md-6 m-5">
+class Signup extends Component {
+    
+    render() { 
+        return ( 
+            <div className="container col-md-6 m-5">
             <h1>Sign Up</h1>
             <form>
                 <div className="form-group">
@@ -23,7 +25,8 @@ function Signup() {
                 <button type="submit" className="btn btn-primary">Submit</button>
             </form>
         </div>
-    );
+         );
+    }
 }
-
+ 
 export default Signup;

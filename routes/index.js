@@ -9,5 +9,5 @@ router.use("/", itemRoutes);
 router.use(function(req, res) {
     res.sendFile(path.join(__dirname, "../../client/public/index.html"));
   });
-  
-  module.exports = router;
+
+module.exports = router;
