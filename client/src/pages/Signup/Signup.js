@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 
 class Signup extends Component {
@@ -29,20 +28,17 @@ class Signup extends Component {
             password: this.state.password
         }
         console.log(userData);
-        console.log(userData.username);
+        //console.log(userData.username);
+        if (!userData.username || !userData.email || !userData.password) {
+            return;
+        }
         axios.post("api/users", userData)
             .then(function (response) {
-                // this.setRedirect();
-                // this.renderRedirect();
-
                 that.changePage();
-
-                //return <Redirect to='/UserDashboard' />
                 console.log(response)
             }).catch(function (err) {
                 console.log(err)
             })
-
     }
 
     handleInputChange = event => {
@@ -52,20 +48,6 @@ class Signup extends Component {
         })
         //console.log("value is " + value);
     };
-
-    renderRedirect = () => {
-        console.log("redirect works!");
-        if (this.state.redirect) {
-            return <Redirect to='/Userdashboard' />
-        }
-    };
-    setRedirect = () => {
-        this.setState({
-            redirect: true
-        })
-    }
-
-
     render() {
         return (
             <div className="container col-md-6 m-5">
