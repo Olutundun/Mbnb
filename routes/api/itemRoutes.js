@@ -21,5 +21,9 @@ router
 //     .route("/:id")
 //     .get(itemController.findById)
 //     .delete(itemController.remove);
+router.route("/uploads")
+.post(req, res) => {
+
+}
 
 module.exports = router;
