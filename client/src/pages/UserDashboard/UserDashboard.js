@@ -8,6 +8,7 @@ import RentalModal from "../../components/Modal";
 // import Modal from "./src/components/Modal/index.js";
 
 class UserDashboard extends Component {
+<<<<<<< HEAD
   constructor(props) {
     super(props);
     // this.state = { posts: [] };
@@ -17,6 +18,9 @@ class UserDashboard extends Component {
       .then(posts => (this.setState({ posts }))
       )
   }
+=======
+  
+>>>>>>> 4396210fb773146fec65c4b2114f8af3dbc8be4f
 
   state = {
     posts: [],
@@ -24,6 +28,7 @@ class UserDashboard extends Component {
     itemDescription: "",
     cost: "",
     category: "",
+<<<<<<< HEAD
     images: "",
     modal: false
   }
@@ -34,11 +39,15 @@ class UserDashboard extends Component {
     this.setState ({
       isOpen: !this.state.isOpen
     });
+=======
+    images: ""
+>>>>>>> 4396210fb773146fec65c4b2114f8af3dbc8be4f
   }
   
 
   handleFormSubmit = (event) => {
     event.preventDefault();
+    
     console.log("submitted!")
     const formData = {
       itemName: this.state.itemName,

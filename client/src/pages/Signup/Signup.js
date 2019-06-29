@@ -1,13 +1,26 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 
 class Signup extends Component {
+    constructor(props) {
+        super(props)
+        this.changePage = this.changePage.bind(this);
+    }
+
     state = {
         username: "",
         email: "",
         password: ""
     }
+
+    changePage = () => {
+        this.props.history.push('/UserDashboard');
+    }
+
     handleFormSubmit = (event) => {
+        const that = this;
+
         event.preventDefault();
         console.log("submitted!")
         const userData = {
@@ -19,6 +32,12 @@ class Signup extends Component {
         console.log(userData.username);
         axios.post("api/users", userData)
             .then(function (response) {
+                // this.setRedirect();
+                // this.renderRedirect();
+
+                that.changePage();
+
+                //return <Redirect to='/UserDashboard' />
                 console.log(response)
             }).catch(function (err) {
                 console.log(err)
@@ -33,6 +52,20 @@ class Signup extends Component {
         })
         //console.log("value is " + value);
     };
+
+    renderRedirect = () => {
+        console.log("redirect works!");
+        if (this.state.redirect) {
+            return <Redirect to='/Userdashboard' />
+        }
+    };
+    setRedirect = () => {
+        this.setState({
+            redirect: true
+        })
+    }
+
+
     render() {
         return (
             <div className="container col-md-6 m-5">
