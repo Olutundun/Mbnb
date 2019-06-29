@@ -26,8 +26,8 @@ class UserDashboard extends Component {
       category: this.state.category,
       image: this.state.images
     }
-    console.log(formData)
-    console.log(formData.itemName)
+    console.log(formData);
+    console.log(formData.itemName);
     axios.post("api/items", formData)
       .then(function (response) {
         console.log(response)
