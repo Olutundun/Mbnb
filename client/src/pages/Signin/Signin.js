@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import "./signin.css";
 import axios from "axios";
 
@@ -20,7 +20,7 @@ class Signin extends Component {
         console.log("almost submitted!")
         this.setState({
             errorMsg: ""
-          });
+        });
         const userData = {
             username: this.state.username,
             password: this.state.password
@@ -44,14 +44,19 @@ class Signin extends Component {
         axios.post("/api/signin", {
             userData
         }).then(response => {
-            console.log('sinin response: ')
+            console.log('signin response: ')
             console.log(response)
-            if(response.status === 200) {
+            const userid = response.data.id;
+            const username = response.data.username;
+            if (response.status === 200) {
                 //update App.js state
                 this.props.updateUser({
                     loggedIn: true,
-                    username: response.data.userData
+                    username: username,
+                    userid: userid,
                 })
+                sessionStorage.setItem("user", JSON.stringify(username));
+                sessionStorage.setItem("userid", JSON.stringify(userid));
                 //update the state to redirect to home
                 this.setState({
                     redirectTo: '/UserDashboard'
@@ -86,16 +91,19 @@ class Signin extends Component {
                         <div className="input-group mb-2">
                             <div className="input-group-prepend">
                                 <div className="input-group-text">@</div>
-                                <input name="username" value={this.state.username} onChange={this.handleInputChange} type="text" className="form-control" id="inlineFormInputGroup" placeholder="Username"></input>
+                                <input name="username" value={this.state.username} onChange={this.handleInputChange} type="text" className="form-control" id="inlineFormInputGroup" placeholder="Enter username"></input>
                             </div>
                         </div>
                     </div>
                     <div className="form-group">
                         <label htmlFor="Password"> Password </label>
-                        <input name="password" value={this.state.password} onChange={this.handleInputChange} type="password" className="form-control" id="Password" placeholder="Password"></input>
+                        <input name="password" value={this.state.password} onChange={this.handleInputChange} type="password" className="form-control" id="Password" placeholder="Enter password"></input>
 
                     </div>
                     <button onClick={this.handleFormSubmit} type="submit" className="btn btn-primary">Submit</button>
+                    <div className="text-center">
+                              <Link to="/Signup" className="sign-up">New to Mbnb? Sign Up here!</Link>
+                          </div>
                 </form>
             </div>
         );
