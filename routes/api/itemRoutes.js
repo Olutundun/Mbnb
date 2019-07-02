@@ -4,8 +4,12 @@ const router = require("express").Router();
 router
     .route("/api/items")
     .get((req, res) => {
+        var query = {};
+            if (req.query.user_id) {
+                query.UserId = req.query.user_id;
+            }
         db.Item.findAll({}).then(function (item) {
-            //console.log(item)
+            console.log(item)
             res.json(item);
         })
     });

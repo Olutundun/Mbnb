@@ -7,7 +7,6 @@ module.exports = function (sequelize, DataTypes) {
         },
         email: {
             type: DataTypes.STRING,
-            allowNull: false,
             unique: true,
             validate: {
                 isEmail: true
@@ -20,11 +19,11 @@ module.exports = function (sequelize, DataTypes) {
 
     });
 
-    // User.associate = function (models) {
-    //     User.hasMany(models.Item, {
-    //         onDelete: "cascade"
-    //     });
-    // };
+    User.associate = function (models) {
+        User.hasMany(models.Item, {
+           onDelete: "cascade"
+        });
+    };
 
     User.beforeCreate((user, options) => {
         const salt = bcrypt.genSaltSync();
@@ -33,11 +32,6 @@ module.exports = function (sequelize, DataTypes) {
     User.prototype.validPassword = function (password) {
         return bcrypt.compareSync(password, this.password);
     };
-    // create all the defined tables in the specified database.
-    sequelize.sync()
-        .then(() => console.log('users table has been successfully created, if one doesn\'t exist'))
-        .catch(error => console.log('This error occured', error));
-    // In this case, before a User is created, we will automatically hash their password
 
     return User;
 };

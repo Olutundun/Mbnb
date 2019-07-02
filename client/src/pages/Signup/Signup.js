@@ -1,27 +1,22 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 
 class Signup extends Component {
-    constructor(props) {
-        super(props)
-        this.changePage = this.changePage.bind(this);
+    constructor() {
+        super()
+        this.state = {
+            username: "",
+            email: "",
+            password: "",
+            redirectTo: null
     }
-
-    state = {
-        username: "",
-        email: "",
-        password: ""
-    }
-
-    changePage = () => {
-        this.props.history.push('/UserDashboard');
+    this.handleFormSubmit = this.handleFormSubmit.bind(this)
+    this.handleInputChange = this.handleInputChange.bind(this)
     }
 
     handleFormSubmit = (event) => {
-        const that = this;
-
         event.preventDefault();
-        console.log("submitted!")
         const userData = {
             username: this.state.username,
             email: this.state.email,
@@ -32,10 +27,17 @@ class Signup extends Component {
         if (!userData.username || !userData.email || !userData.password) {
             return;
         }
-        axios.post("api/users", userData)
+        axios.post("/api/signup", userData)
             .then(function (response) {
-                that.changePage();
                 console.log(response)
+                if (!response.data.errmsg) {
+                    console.log("form submitted!")
+                    this.setState ({
+                        redirectTo: '/UserDashBoard'
+                    })
+                }else {
+                    console.log('duplicate!')
+                }
             }).catch(function (err) {
                 console.log(err)
             })
@@ -49,6 +51,9 @@ class Signup extends Component {
         //console.log("value is " + value);
     };
     render() {
+        if (this.state.redirectTo) {
+            return <Redirect to={{ pathname: this.state.redirectTo }} />
+        }
         return (
             <div className="container col-md-6 m-5">
                 <h1>Sign Up</h1>
