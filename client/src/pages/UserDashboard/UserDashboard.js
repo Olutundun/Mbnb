@@ -111,7 +111,7 @@ class UserDashboard extends Component {
               <tr key={post.id}>
                 <td>{post.id}</td>
                 <td>{post.itemName}</td>
-                <td>{post.images}</td>
+                <td><img src ={post.images} alt="music equipment"></img></td>
                 <td>{post.cost}</td>
                 <td>{post.itemDescription}</td>
                 <td>{post.category}</td>
