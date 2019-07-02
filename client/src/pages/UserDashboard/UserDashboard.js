@@ -37,7 +37,7 @@ class UserDashboard extends Component {
     }
     console.log(formData);
     console.log(formData.itemName);
-    axios.post("/api/items", formData)
+    axios.post("/api/newitems", formData)
       .then(function (response) {
         console.log(response)
       }).catch(function (err) {

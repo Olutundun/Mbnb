@@ -4,7 +4,7 @@ const router = require("express").Router();
 router
     .route("/api/items")
     .get((req, res) => {
-        var query = {};
+        let query = {};
             if (req.query.user_id) {
                 query.UserId = req.query.user_id;
             }
@@ -15,7 +15,7 @@ router
     });
 
 router
-    .route("/api/items")
+    .route("/api/newitems")
     .post((req, res) => {
         db.Item.create(req.body).then(function (item) {
             console.log(item)
