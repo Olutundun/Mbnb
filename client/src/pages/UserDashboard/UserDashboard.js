@@ -1,11 +1,19 @@
 import React, { Component } from "react";
 import "./UserDashboard.css";
 import axios from "axios";
-import api from "../../util/api";
+//import Modal from "../../components/Modal";
+//import RentalModal from "../../components/Modal";
 // import { striped, bordered, hover } from 'react-bootstrap';
 // import Modal from "./src/components/Modal/index.js";
 
 class UserDashboard extends Component {
+  constructor(props) {
+    super(props);
+    fetch('http://localhost:3001/api/items')
+      .then(response => response.json())
+      .then(posts => (this.setState({ posts }))
+      )
+  }
 
   state = {
     posts: [],
@@ -14,7 +22,7 @@ class UserDashboard extends Component {
     cost: "",
     category: "",
     images: "",
-    imagUpload:""
+    imageUpload:""
 
   }
   
@@ -24,13 +32,13 @@ class UserDashboard extends Component {
 
       let file =e.target.files[0]
 
-      this.setState({imagUpload: file})
+      this.setState({imageUpload: file})
     
       };
 
       handleImgurUpload = (event) => {
         event.preventDefault();
-        let file = this.state.imagUpload
+        let file = this.state.imageUpload
 
         axios({
           url: 'https://api.imgur.com/3/image',
@@ -52,6 +60,7 @@ class UserDashboard extends Component {
 
   handleFormSubmit = (event) => {
     event.preventDefault();
+
     console.log("submitted!")
     const formData = {
       itemName: this.state.itemName,
@@ -101,10 +110,10 @@ class UserDashboard extends Component {
             {this.state.posts.map(post =>
               <tr key={post.id}>
                 <td>{post.id}</td>
-                <td>{post.item_name}</td>
+                <td>{post.itemName}</td>
                 <td>{post.images}</td>
-                <td>{post.day_cost}</td>
-                <td>{post.item_description}</td>
+                <td>{post.cost}</td>
+                <td>{post.itemDescription}</td>
                 <td>{post.category}</td>
               </tr>
             )}
@@ -112,6 +121,15 @@ class UserDashboard extends Component {
         </table>
 
         <br></br>
+
+
+
+        <button onClick={this.toggleModal}>
+          Open the modal
+        </button>
+
+
+
 
 
         <form>

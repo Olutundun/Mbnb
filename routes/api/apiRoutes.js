@@ -4,8 +4,8 @@ var passport = require("../../config/passport");
 // Routes
 
 module.exports = function (app) {
-  app.post("/user/Signin", passport.authenticate("local"), function (req, res) {
-    res.json("/users");
+  app.post("/api/Signin", passport.authenticate("local"), function (req, res) {
+    res.json("/UserDashboard");
   });
   app.post("/user/Signup", function (req, res) {
     console.log(req.body);
@@ -14,7 +14,7 @@ module.exports = function (app) {
       email: req.body.email,
       password: req.body.password
     }).then(function () {
-      res.redirect(307, "/api/Signin");
+      res.redirect(307, "/UserDashboard");
     }).catch(function (err) {
       console.log(err);
       res.json(err);

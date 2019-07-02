@@ -25,7 +25,6 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING
     },
     images: DataTypes.STRING,
-    postedBy: DataTypes.TEXT
   });
   // Item.associate = function (models) {
   //   Item.belongsTo(models.User, {

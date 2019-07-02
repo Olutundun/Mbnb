@@ -2,12 +2,24 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 class Signup extends Component {
+    constructor(props) {
+        super(props)
+        this.changePage = this.changePage.bind(this);
+    }
+
     state = {
         username: "",
         email: "",
         password: ""
     }
+
+    changePage = () => {
+        this.props.history.push('/UserDashboard');
+    }
+
     handleFormSubmit = (event) => {
+        const that = this;
+
         event.preventDefault();
         console.log("submitted!")
         const userData = {
@@ -16,14 +28,17 @@ class Signup extends Component {
             password: this.state.password
         }
         console.log(userData);
-        console.log(userData.username);
+        //console.log(userData.username);
+        if (!userData.username || !userData.email || !userData.password) {
+            return;
+        }
         axios.post("api/users", userData)
             .then(function (response) {
+                that.changePage();
                 console.log(response)
             }).catch(function (err) {
                 console.log(err)
             })
-
     }
 
     handleInputChange = event => {
