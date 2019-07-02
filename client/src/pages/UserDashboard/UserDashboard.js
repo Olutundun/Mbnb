@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./UserDashboard.css";
 import axios from "axios";
+import api from "../../util/api";
 // import { striped, bordered, hover } from 'react-bootstrap';
 // import Modal from "./src/components/Modal/index.js";
 
@@ -12,9 +13,42 @@ class UserDashboard extends Component {
     itemDescription: "",
     cost: "",
     category: "",
-    images: ""
+    images: "",
+    imagUpload:""
 
   }
+  
+    handleImgur = (e) => {
+
+      console.log(e.target.files[0]);
+
+      let file =e.target.files[0]
+
+      this.setState({imagUpload: file})
+    
+      };
+
+      handleImgurUpload = (event) => {
+        event.preventDefault();
+        let file = this.state.imagUpload
+
+        axios({
+          url: 'https://api.imgur.com/3/image',
+          method: "POST",
+          headers: {
+            "Authorization": "Client-ID b54788aa321893d"
+          },
+          processData: false,
+          mimeType: "multipart/form-data",
+          contentType: false,
+          data: file
+        }).then((res) => {
+          console.log(res.data.data.link);
+          let photo = res.data.data.link;
+          this.setState({images: photo})
+        })
+
+      }
 
   handleFormSubmit = (event) => {
     event.preventDefault();
@@ -24,7 +58,7 @@ class UserDashboard extends Component {
       itemDescription: this.state.itemDescription,
       cost: this.state.cost,
       category: this.state.category,
-      image: this.state.images
+      images: this.state.images
     }
     console.log(formData);
     console.log(formData.itemName);
@@ -43,7 +77,10 @@ class UserDashboard extends Component {
       [name]: value
     })
     //console.log("value is " + value);
+    
   };
+  
+  
 
   render() {
     return (
@@ -100,14 +137,13 @@ class UserDashboard extends Component {
               <option>Keyboards</option>
             </select>
             <p>Upload an Image</p>
-            <div className="custom-file">
-              <input type="file" className="custom-file-input" id="inputGroupFile01"
-                aria-describedby="inputGroupFileAddon01"></input>
-              <label className="custom-file-label" htmlFor="inputGroupFile01">Choose file</label>
-              <br></br>
-              <br></br>
-              <button type="upload" className="btn btn-dark">Upload</button>
+            <div id="imgur">
+            <input type="file" className="imgur" accept="image/*" data-max-size="5000" onChange={(e) => this.handleImgur(e)} />
             </div>
+            <button onClick = {(e) => this.handleImgurUpload(e)}>Upload Image</button>
+              <br></br>
+              <br></br>
+            
             <br></br>
             <br></br>
             <button onClick={this.handleFormSubmit} type="submit" className="btn btn-primary">Submit</button>

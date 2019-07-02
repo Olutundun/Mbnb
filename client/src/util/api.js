@@ -12,5 +12,6 @@ export default{
     },
     postItem: function() {
         return axios.post("/api/items")
-    }
+    },
+
 }
