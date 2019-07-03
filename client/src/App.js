@@ -20,7 +20,7 @@ class App extends Component {
         userid: userid
       }
     }
-    else{
+    else {
     this.state = {
       loggedIn: false,
       username: null,
@@ -55,13 +55,14 @@ getUser = () => {
         console.log("there is a user!")
         this.setState({
           loggedIn: true,
-          username: response.data.username
+          username: response.data.username,
+          userid: userid
         })
         sessionStorage.setItem("user", JSON.stringify(response.data.username));
       } else {
         this.setState({
           loggedIn: false,
-          username: null
+          username: null,
         })
       }
     });

@@ -9,7 +9,7 @@ import axios from "axios";
 class UserDashboard extends Component {
   constructor(props) {
     super(props);
-    fetch('http://localhost:3001/api/items')
+    fetch('http://localhost:3001/api/items/:id')
       .then(response => response.json())
       .then(posts => (this.setState({ posts }))
       )
@@ -21,11 +21,11 @@ class UserDashboard extends Component {
     itemDescription: "",
     cost: "",
     category: "",
-    images: ""
+    images: "",
   }
-
-  handleFormSubmit = (event) => {
-    event.preventDefault();
+  
+  handleFormSubmit = (e) => {
+    e.preventDefault();
 
     console.log("submitted!")
     const formData = {
@@ -33,11 +33,13 @@ class UserDashboard extends Component {
       itemDescription: this.state.itemDescription,
       cost: this.state.cost,
       category: this.state.category,
-      image: this.state.images
+      image: this.state.images,
+      UserId: this.props.userid
     }
     console.log(formData);
-    console.log(formData.itemName);
-    axios.post("/api/newitems", formData)
+    console.log(formData.UserId)
+
+    axios.post("api/items", formData)
       .then(function (response) {
         console.log(response)
       }).catch(function (err) {
@@ -85,15 +87,9 @@ class UserDashboard extends Component {
 
         <br></br>
 
-
-
         <button onClick={this.toggleModal}>
           Open the modal
         </button>
-
-
-
-
 
         <form>
           <div className="container form-group postForm">

@@ -41,9 +41,9 @@ class Signin extends Component {
         //     }).catch(function (err) {
         //         console.log(err)
         //     })
-        axios.post("/api/signin", {
+        axios.post("/api/signin", 
             userData
-        }).then(response => {
+        ).then(response => {
             console.log('signin response: ')
             console.log(response)
             const userid = response.data.id;
@@ -59,6 +59,7 @@ class Signin extends Component {
                 sessionStorage.setItem("userid", JSON.stringify(userid));
                 //update the state to redirect to home
                 this.setState({
+                    userid: userid,
                     redirectTo: '/UserDashboard'
                 })
             }

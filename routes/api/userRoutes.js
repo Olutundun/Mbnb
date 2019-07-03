@@ -1,10 +1,11 @@
 const db = require("../../models")
 const router = require("express").Router();
 const passport = require("../../config/passport");
+
 router
     .route("/api/users")
     .get((req, res) => {
-        const username = req.params.username;
+        //const username = req.params.username;
         db.User.findAll({}).then(function (user) {
             //console.log(user)
             res.json(user);
@@ -36,11 +37,15 @@ router
     router
     .route("/api/signin", passport.authenticate("local"))
     .post((req, res) => {
-        db.User.findOne({username: req.body.username}).then(function (user) {
+        db.User.findOne({where: {username: req.body.username}}).then(function (user) {
             console.log(user)
             res.json(user)
         })
+        .catch((err) => {
+            console.log(err);
+        })
     })
+
 
 
 module.exports = router;
