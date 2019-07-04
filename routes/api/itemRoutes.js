@@ -25,8 +25,7 @@ router
         db.Item.findAll({
             where: {
                 id: req.params.id
-            },
-            include: [db.User]
+            }
             }).then(function (item) {
             res.json(item)
         })

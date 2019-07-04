@@ -17,7 +17,7 @@ class Signin extends Component {
 
     handleFormSubmit = (event) => {
         event.preventDefault();
-        console.log("almost submitted!")
+        //console.log("almost submitted!")
         this.setState({
             errorMsg: ""
         });

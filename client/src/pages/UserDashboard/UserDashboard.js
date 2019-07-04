@@ -9,7 +9,7 @@ import axios from "axios";
 class UserDashboard extends Component {
   constructor(props) {
     super(props);
-    fetch('http://localhost:3001/api/items/:id')
+    fetch('http://localhost:3001/api/items')
       .then(response => response.json())
       .then(posts => (this.setState({ posts }))
       )
@@ -45,8 +45,8 @@ class UserDashboard extends Component {
       }).catch(function (err) {
         console.log(err)
       })
-
   }
+
 
   handleInputChange = event => {
     const { name, value } = event.target;
