@@ -19,5 +19,17 @@ router
         })
     })
 
+    router
+    .route("/api/items/:id")
+    .get((req, res) => {
+        db.Item.findAll({
+            where: {
+                id: req.params.id
+            }
+            }).then(function (item) {
+            res.json(item)
+        })
+    })
+
 
 module.exports = router;

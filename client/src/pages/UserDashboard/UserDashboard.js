@@ -57,9 +57,9 @@ class UserDashboard extends Component {
     })
 
   }
-
-  handleFormSubmit = (event) => {
-    event.preventDefault();
+  
+  handleFormSubmit = (e) => {
+    e.preventDefault();
 
     console.log("submitted!")
     const formData = {
@@ -67,10 +67,12 @@ class UserDashboard extends Component {
       itemDescription: this.state.itemDescription,
       cost: this.state.cost,
       category: this.state.category,
+      UserId: this.props.userid,
       images: this.state.images
     }
     console.log(formData);
-    console.log(formData.itemName);
+    console.log(formData.UserId)
+
     axios.post("api/items", formData)
       .then(function (response) {
         console.log(response)
@@ -78,6 +80,7 @@ class UserDashboard extends Component {
         console.log(err)
       })
   }
+
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -145,12 +148,12 @@ class UserDashboard extends Component {
                 <label htmlFor="itemDescription">Item description</label>
                 <input name="itemDescription" value={this.state.itemDescription} onChange={this.handleInputChange} type="description" className="form-control" id="exampleInputDescription" placeholder="Enter Item Description"></input>
 
-                <label htmlFor="itemCost">Rent per day</label>
-                <input name="itemCost" value={this.state.cost} onChange={this.handleInputChange} type="description" className="form-control" id="exampleInputDescription" placeholder="Rent per day"></input>
+                <label htmlFor="cost">Rent per day</label>
+                <input name="cost" value={this.state.cost} onChange={this.handleInputChange} type="description" className="form-control" id="exampleInputDescription" placeholder="Rent per day"></input>
 
                 <label htmlFor="category">Category select</label>
                 <select name="category" value={this.state.category} onChange={this.handleInputChange} className="form-control" id="exampleFormControlSelect1">
-                  <option selected>Select Category</option>
+                  <option >Select Category</option>
                   <option value="Guitar/Base">Guitar/Base</option>
                   <option value="Drum Sets">Drum sets</option>
                   <option value="DJ Equipments">DJ Equipment</option>
@@ -161,7 +164,7 @@ class UserDashboard extends Component {
                 <label htmlFor="itemDescription">Choose some pictures of item you are trying to rent</label>
                 <div className="custom-file col-md-8">
                   <input type="file" className="custom-file-input" id="imgur" accept="image/*" data-max-size="5000" onChange={(e) => this.handleImgur(e)}></input>
-                  <label className="custom-file-label" for="customFile">{this.state.imageUpload ? this.state.imageUpload.name : 'Choose file'}</label>
+                  <label className="custom-file-label" htmlFor="customFile">{this.state.imageUpload ? this.state.imageUpload.name : 'Choose file'}</label>
                 </div>
                 <br></br>
                 <br></br>
