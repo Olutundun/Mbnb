@@ -1,26 +1,75 @@
-import React from "react";
+import React, { Component } from "react";
+import { Link, Redirect } from "react-router-dom";
+import axios from "axios";
 
-function Navbar() {
-    return (
-        <div>
-            <nav className="navbar nav bg-dark nav-pills">
-            <a className="navbar-brand" href="/">Mbnb</a>
-            <ul className="navbar-nav d-flex flex-row ">
-            
-                <li className="nav-item m-1">
-                    <a className="nav-link active px-1" href="/Signin">Sign in</a>
-                </li>
-                <li className="nav-item m-1">
-                    <a className="nav-link active px-1" href="/Signup">Sign Up</a>
-                </li>
-                <li className="nav-item m-1">
-                    <a className="nav-link active px-1" href="/UserDashboard">User Dashboard</a>
-                </li>
-                
-            </ul>
-            </nav>
-        </div>
-            );
+class Navbar extends Component {
+    constructor(props) {
+        super()
+        this.signout = this.signout.bind(this);
+        this.state = {
+            redirectTo: null
         }
-        
+    }
+
+    signout = (e) => {
+        e.preventDefault();
+        axios.post("/api/signout").then((res) => {
+            if (res.status === 200) {
+                this.props.updateUser({
+                    loggedIn: false,
+                    username: null
+                });
+                sessionStorage.clear();
+                this.setState({
+                    redirectTo: "/"
+                })
+            }
+        }).catch((err) => {
+            console.log("error: " + err)
+        })
+    }
+    render() {
+        if (this.state.redirectTo) {
+
+            //setting state here throws a warning
+            let redirect = this.state.redirectTo;
+            this.setState({
+                redirectTo: null
+            })
+            return <Redirect to={{ pathname: redirect }} />
+        }
+        const loggedIn = this.props.loggedIn;
+        console.log(this.props);
+        return (
+            <div>
+                <nav className="navbar nav bg-dark nav-pills">
+                    <Link className="navbar-brand" to="/">Mbnb</Link>
+                    <ul className="navbar-nav d-flex flex-row ">
+                        {loggedIn ? (
+                            <React.Fragment>
+                                <li className="nav-item">
+                                    <h3 style={{ color: "pink" }} className="navbar-text m-1">Hello {this.props.username}!</h3>
+                                </li>
+                                <li className="nav-item">
+                                    <button className="btn btn-success" id="logout-link" onClick={this.signout}>Sign Out</button>
+                                </li>
+                            </React.Fragment>
+                        ) : (
+                                <React.Fragment>
+                                    <li className="nav-item">
+                                        <Link className="nav-link menu" to="/Signup">Sign Up</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link className="nav-link menu" to="/Signin">Sign In</Link>
+                                    </li>
+                                </React.Fragment>
+                            )}
+                    </ul>
+                </nav>
+            </div>
+
+
+        )
+    }
+}
 export default Navbar;

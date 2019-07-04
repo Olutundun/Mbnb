@@ -9,22 +9,22 @@ router
         db.User.findAll({}).then(function (user) {
             //console.log(user)
             res.json(user);
-        }).catch((err)=> {
+        }).catch((err) => {
             res.status(422).json(err)
         })
     });
 
-    router.route("/api/users/:id").get((req, res) => {
-        db.User.findOne({
-          where: {
+router.route("/api/users/:id").get((req, res) => {
+    db.User.findOne({
+        where: {
             id: req.params.id
-          },
-          include: [db.Item]
-        }).then(function (user) {
-          res.json(user);
-        });
-      });
-    
+        },
+        include: [db.Item]
+    }).then(function (user) {
+        res.json(user);
+    });
+});
+
 
 router
     .route("/api/signup")
@@ -34,18 +34,29 @@ router
             res.json(user)
         })
     })
-    router
+router
     .route("/api/signin", passport.authenticate("local"))
     .post((req, res) => {
-        db.User.findOne({where: {username: req.body.username}}).then(function (user) {
+        db.User.findOne({ where: { username: req.body.username } }).then(function (user) {
             console.log(user)
             res.json(user)
         })
-        .catch((err) => {
-            console.log(err);
-        })
+            .catch((err) => {
+                console.log(err);
+            })
     })
 
+router
+    .route("/api/signout")
+    .post((req, res) => {
+        if (req.user) {
+            req.signout();
+            res.send("logging out");
+        } else {
+            console.log("already signed out")
+            res.send("no user to sign out!");
+        }
+    })
 
 
 module.exports = router;
