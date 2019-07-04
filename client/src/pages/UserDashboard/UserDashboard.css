@@ -8,13 +8,14 @@
 h1 {
     border-bottom: 3px solid #000000;
 }
-img{
+/* img{
     max-width:180px;
   }
-  input[type=file]{
+  input[type=file]
+  {
   padding:10px;
-  background:#2d2d2d;
-}
+  background:#dadada;
+} */
 .postForm{
     background-color:#2d2d2d;
     background: #e9e4dd

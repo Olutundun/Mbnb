@@ -4,7 +4,8 @@ const session = require('express-session');
 const db = require("./models");
 const app = express();
 const routes = require("./routes");
-const passport = require("passport")
+const passport = require("passport");
+
 
 const PORT = process.env.PORT || 3001;
 
@@ -35,6 +36,7 @@ var syncOptions = {
 app.use(cors());
 // Add routes, both API and view
 app.use(routes);
+
 
 // Starting the API server, syncing our models 
 db.sequelize.sync(syncOptions).then(function () {

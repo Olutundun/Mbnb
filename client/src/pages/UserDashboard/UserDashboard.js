@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import "./UserDashboard.css";
 import axios from "axios";
-//import Modal from "../../components/Modal";
-//import RentalModal from "../../components/Modal";
-// import { striped, bordered, hover } from 'react-bootstrap';
-// import Modal from "./src/components/Modal/index.js";
+
 
 class UserDashboard extends Component {
   constructor(props) {
@@ -22,6 +19,43 @@ class UserDashboard extends Component {
     cost: "",
     category: "",
     images: "",
+    imageUpload: "",
+    shown: false
+
+  }
+
+  toggle() {
+    this.setState({
+      shown: !this.state.shown
+    });
+  }
+
+  handleImgur = (e) => {
+    console.log(e.target.files[0]);
+    let file = e.target.files[0]
+    this.setState({ imageUpload: file })
+  };
+
+  handleImgurUpload = (event) => {
+    event.preventDefault();
+    let file = this.state.imageUpload
+
+    axios({
+      url: 'https://api.imgur.com/3/image',
+      method: "POST",
+      headers: {
+        "Authorization": "Client-ID b54788aa321893d"
+      },
+      processData: false,
+      mimeType: "multipart/form-data",
+      contentType: false,
+      data: file
+    }).then((res) => {
+      console.log(res.data.data.link);
+      let photo = res.data.data.link;
+      this.setState({ images: photo })
+    })
+
   }
   
   handleFormSubmit = (e) => {
@@ -33,8 +67,8 @@ class UserDashboard extends Component {
       itemDescription: this.state.itemDescription,
       cost: this.state.cost,
       category: this.state.category,
-      image: this.state.images,
-      UserId: this.props.userid
+      UserId: this.props.userid,
+      images: this.state.images
     }
     console.log(formData);
     console.log(formData.UserId)
@@ -56,7 +90,16 @@ class UserDashboard extends Component {
     //console.log("value is " + value);
   };
 
+
   render() {
+    var shown = {
+      display: this.state.shown ? "block" : "none"
+    };
+
+    var hidden = {
+      display: this.state.shown ? "none" : "block"
+    }
+
     return (
       <div className="container mainContainer p-5">
         <h1>Your Posted Items</h1>
@@ -87,47 +130,54 @@ class UserDashboard extends Component {
 
         <br></br>
 
-        <button onClick={this.toggleModal}>
-          Open the modal
-        </button>
-
-        <form>
-          <div className="container form-group postForm">
-            <button className="btn btn-dark">post new rental</button>
-            <br></br>
-            <br></br>
-            <label htmlFor="exampleInputName">Item Name</label>
-            <input name="itemName" value={this.state.itemName} onChange={this.handleInputChange} type="name" className="form-control" id="exampleInputItem" aria-describedby="emailHelp" placeholder="Enter Item name"></input>
-
-            <label htmlFor="exampleInputDescription">Item description</label>
-            <input name="itemDescription" value={this.state.itemDescription} onChange={this.handleInputChange} type="description" className="form-control" id="exampleInputDescription" placeholder="Enter Item Description"></input>
-
-            <label htmlFor="exampleInputPassword1">Cost</label>
-            <input name="cost" value={this.state.cost} onChange={this.handleInputChange} type="description" className="form-control" id="exampleInputDescription" placeholder="Average Cost"></input>
-
-            <label htmlFor="exampleFormControlSelect1">Category select</label>
-            <select name="category" value={this.state.category} onChange={this.handleInputChange} className="form-control" id="exampleFormControlSelect1">
-              <option>Guitar/Base</option>
-              <option>Drum sets</option>
-              <option>DJ Equipment</option>
-              <option>Stage lighting</option>
-              <option>Keyboards</option>
-            </select>
-            <p>Upload an Image</p>
-            <div className="custom-file">
-              <input type="file" className="custom-file-input" id="inputGroupFile01"
-                aria-describedby="inputGroupFileAddon01"></input>
-              <label className="custom-file-label" htmlFor="inputGroupFile01">Choose file</label>
-              <br></br>
-              <br></br>
-              <button type="upload" className="btn btn-dark">Upload</button>
-            </div>
-            <br></br>
-            <br></br>
-            <button onClick={this.handleFormSubmit} type="submit" className="btn btn-primary">Submit</button>
+        <div>
+          {/* When post button is  closed */}
+          <div className="container" style={hidden}>
+            <h4>Got Some music equipments to rent, post it by clicking button below!</h4>
+            <h4>Happy renting!</h4>
           </div>
-        </form>
 
+          <button className="btn btn-dark " onClick={this.toggle.bind(this)}>Post New Rental</button>
+
+          <div className="container" style={shown}>
+            <form>
+              <div className="container form-group postForm">
+                <label htmlFor="itemName">Item Name</label>
+                <input name="itemName" value={this.state.itemName} onChange={this.handleInputChange} type="name" className="form-control" id="exampleInputItem" aria-describedby="emailHelp" placeholder="Enter Item name"></input>
+
+                <label htmlFor="itemDescription">Item description</label>
+                <input name="itemDescription" value={this.state.itemDescription} onChange={this.handleInputChange} type="description" className="form-control" id="exampleInputDescription" placeholder="Enter Item Description"></input>
+
+                <label htmlFor="cost">Rent per day</label>
+                <input name="cost" value={this.state.cost} onChange={this.handleInputChange} type="description" className="form-control" id="exampleInputDescription" placeholder="Rent per day"></input>
+
+                <label htmlFor="category">Category select</label>
+                <select name="category" value={this.state.category} onChange={this.handleInputChange} className="form-control" id="exampleFormControlSelect1">
+                  <option >Select Category</option>
+                  <option value="Guitar/Base">Guitar/Base</option>
+                  <option value="Drum Sets">Drum sets</option>
+                  <option value="DJ Equipments">DJ Equipment</option>
+                  <option value="Stage Lighting">Stage Lighting</option>
+                  <option value="Keyboards">Keyboards</option>
+                </select>
+
+                <label htmlFor="itemDescription">Choose some pictures of item you are trying to rent</label>
+                <div className="custom-file col-md-8">
+                  <input type="file" className="custom-file-input" id="imgur" accept="image/*" data-max-size="5000" onChange={(e) => this.handleImgur(e)}></input>
+                  <label className="custom-file-label" htmlFor="customFile">{this.state.imageUpload ? this.state.imageUpload.name : 'Choose file'}</label>
+                </div>
+                <br></br>
+                <br></br>
+                <button className="btn btn-success" onClick={(e) => this.handleImgurUpload(e)}>Upload Image</button>
+
+                <br></br>
+                <br></br>
+
+                <button onClick={this.handleFormSubmit} type="submit" className="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     )
   }
