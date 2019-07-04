@@ -57,7 +57,7 @@ class UserDashboard extends Component {
     })
 
   }
-  
+
   handleFormSubmit = (e) => {
     e.preventDefault();
 
@@ -78,9 +78,13 @@ class UserDashboard extends Component {
         console.log(response)
       }).catch(function (err) {
         console.log(err)
+        fetch('http://localhost:3001/api/items')
+          .then(response => response.json())
+          .then(posts => (this.setState({ posts }))
+          )
       })
-  }
 
+  }
 
   handleInputChange = event => {
     const { name, value } = event.target;
