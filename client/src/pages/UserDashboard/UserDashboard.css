@@ -5,13 +5,13 @@
     border-radius: 25px;
 }
 
-h1 {
+.posted-item {
     border-bottom: 3px solid #000000;
 }
 img{
     max-width:180px;
   }
-  input[type=file]{
+input[type=file]{
   padding:10px;
   background:#dadada;
 }

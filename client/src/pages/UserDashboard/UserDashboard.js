@@ -22,7 +22,8 @@ class UserDashboard extends Component {
     cost: "",
     category: "",
     images: "",
-    imageUpload:""
+    imageUpload:"",
+    successfulUpload: false
 
   }
   
@@ -53,13 +54,13 @@ class UserDashboard extends Component {
         }).then((res) => {
           console.log(res.data.data.link);
           let photo = res.data.data.link;
-          this.setState({images: photo})
+          this.setState({images: photo, successfulUpload: true })
         })
 
       }
 
   handleFormSubmit = (event) => {
-    event.preventDefault();
+    // event.preventDefault();
 
     console.log("submitted!")
     const formData = {
@@ -94,7 +95,7 @@ class UserDashboard extends Component {
   render() {
     return (
       <div className="container mainContainer p-5">
-        <h1>Your Posted Items</h1>
+        <h1 className="posted-item">Your Posted Items</h1>
         <table className="table table-dark table-striped table-bordered table-hover" >
           <thead>
             <tr>
@@ -158,12 +159,13 @@ class UserDashboard extends Component {
             <div id="imgur">
             <input type="file" className="imgur" accept="image/*" data-max-size="5000" onChange={(e) => this.handleImgur(e)} />
             </div>
-            <button onClick = {(e) => this.handleImgurUpload(e)}>Upload Image</button>
+            <br></br>
+            <button onClick = {this.handleImgurUpload}>Upload Image</button>
+            {this.state.successfulUpload && <p>hey we did it</p>}
               <br></br>
               <br></br>
             
-            <br></br>
-            <br></br>
+            
             <button onClick={this.handleFormSubmit} type="submit" className="btn btn-primary">Submit</button>
           </div>
         </form>
