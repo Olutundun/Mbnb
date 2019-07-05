@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 /* eslint-disable react/jsx-no-comment-textnodes */
 import React, { Component } from "react";
-=======
-import React from "react";
->>>>>>> beeb6412336ea09ef06140be48e37a1f25db4b3b
 import "./Home.css";
 import Nav from '../../components/Navbar/index';
 // import axios from "axios";

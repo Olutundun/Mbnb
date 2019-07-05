@@ -134,58 +134,11 @@ class UserDashboard extends Component {
 
         <br></br>
 
-<<<<<<< HEAD
-
-
-        <button onClick={this.toggleModal}>
-          Open the modal
-        </button>
-
-
-
-
-
-        <form>
-          <div className="container form-group postForm">
-            <button className="btn btn-dark">post new rental</button>
-            <br></br>
-            <br></br>
-            <label htmlFor="exampleInputName">Item Name</label>
-            <input name="itemName" value={this.state.itemName} onChange={this.handleInputChange} type="name" className="form-control" id="exampleInputItem" aria-describedby="emailHelp" placeholder="Enter Item name"></input>
-
-            <label htmlFor="exampleInputDescription">Item description</label>
-            <input name="itemDescription" value={this.state.itemDescription} onChange={this.handleInputChange} type="description" className="form-control" id="exampleInputDescription" placeholder="Enter Item Description"></input>
-
-            <label htmlFor="exampleInputPassword1">Cost</label>
-            <input name="cost" value={this.state.cost} onChange={this.handleInputChange} type="description" className="form-control" id="exampleInputDescription" placeholder="Average Cost"></input>
-
-            <label htmlFor="exampleFormControlSelect1">Category select</label>
-            <select name="category" value={this.state.category} onChange={this.handleInputChange} className="form-control" id="exampleFormControlSelect1">
-              <option>Guitar/Base</option>
-              <option>Drum sets</option>
-              <option>DJ Equipment</option>
-              <option>Stage lighting</option>
-              <option>Keyboards</option>
-            </select>
-            <p>Upload an Image</p>
-            <div id="imgur">
-            <input type="file" className="imgur" accept="image/*" data-max-size="5000" onChange={(e) => this.handleImgur(e)} />
-            </div>
-            <br></br>
-            <button onClick = {this.handleImgurUpload}>Upload Image</button>
-            {this.state.successfulUpload && <p>hey we did it</p>}
-              <br></br>
-              <br></br>
-            
-            
-            <button onClick={this.handleFormSubmit} type="submit" className="btn btn-primary">Submit</button>
-=======
         <div>
           {/* When post button is  closed */}
           <div className="container" style={hidden}>
             <h4>Got Some music equipments to rent, post it by clicking button below!</h4>
             <h4>Happy renting!</h4>
->>>>>>> beeb6412336ea09ef06140be48e37a1f25db4b3b
           </div>
 
           <button className="btn btn-dark " onClick={this.toggle.bind(this)}>Post New Rental</button>
