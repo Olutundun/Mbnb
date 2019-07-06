@@ -58,17 +58,4 @@ router
         }
     })
 
-    router
-        .route("/api/item:slug")
-        .get((req,res) => {
-            db.User.findOne({
-                where: {
-                    slug: req.params.slug
-                }
-            }).then(function (user) {
-                res.json(user);
-            })
-        });
-
-
 module.exports = router;

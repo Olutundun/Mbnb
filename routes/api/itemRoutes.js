@@ -31,5 +31,17 @@ router
         })
     })
 
+    router
+        .route("/api/item/:slug")
+        .get((req,res) => {
+            db.Item.findOne({
+                where: {
+                    slug: req.params.slug
+                }
+            }).then(function (item) {
+                res.json(item);
+            })
+        });
+
 
 module.exports = router;
