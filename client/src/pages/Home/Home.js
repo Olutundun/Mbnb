@@ -36,10 +36,12 @@ class Home extends Component {
                         <div className="Parent-div"key={key} >
                             
                              <img id="image-top"src ={post.images} alt="music equipment"></img>
+                            <div id="data-div">
                             <p>{post.itemName}</p>
-                            <p>{post.itemDescription}</p>
-                            <p>{post.category}</p>
-                            <p>{post.cost}</p>
+                            <p>Description: {post.itemDescription}</p>
+                            <p>Category: {post.category}</p>
+                            <p>Cost: ${post.cost}</p>
+                            </div>
                             
                         </div>
                     )}
