@@ -1,27 +1,25 @@
 .mainContainer  {
     margin-top: 4rem;
     margin-bottom: 4rem;
-    background-color: #e9e4dd;opacity: 0.95;
+    background-color: #e9e4dd;
     border-radius: 25px;
 }
 
+h2 {
+    border-bottom: 2px solid #000000;
+    padding: 3px;
+}
 .posted-item {
     border-bottom: 3px solid #000000;
 }
-/* img{
-    max-width:180px;
-  }
-  input[type=file]
-  {
-  padding:10px;
-  background:#dadada;
-} */
+
 .postForm{
-    background-color:#2d2d2d;
-    background: #e9e4dd
+    border-style: solid;
+    margin: 4px;
 
 }
+
 
 #table-image{
     max-width:180px;
-}
+  }
