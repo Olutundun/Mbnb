@@ -1,16 +1,55 @@
-import React from "react";
+/* eslint-disable react/jsx-no-comment-textnodes */
+import React, { Component } from "react";
 import "./Home.css";
+import Nav from '../../components/Navbar/index';
+// import axios from "axios";
 
-function Home() {
-    return(
-        <div className="Main-div">
-            <div className="container">
-                <div className="jumbotron mt-3" id="main-jumbo">
-                <h3 className="text-center" id="headline">Welcome to the new way to get the equipment you need without breaking the bank</h3>
+class Home extends Component {
+    constructor(props) {
+        super(props);
+        fetch('http://localhost:3001/api/items')
+          .then(response => response.json())
+          .then(posts => (this.setState({ posts }))
+          )
+      }
+      state = {
+        posts: [],
+        itemName: "",
+        itemDescription: "",
+        cost: "",
+        category: "",
+        images: ""
+      }
+
+    render() {
+        return(
+        <div className = "react-container">
+            <div className="Main-div">
+                <div className="logo">
+                    {/* <img id="logo-id"src="/images/test-logo.png"/> */}
+                    <h1 id="main-logo">Mbnb</h1>
                 </div>
             </div>
+                < Nav />
+            <div className="equipment-div">
+                    {this.state.posts.map((post, key) =>
+                        <div className="Parent-div"key={key} >
+                            
+                             <img id="image-top"src ={post.images} alt="music equipment"></img>
+                            <p>{post.itemName}</p>
+                            <p>{post.itemDescription}</p>
+                            <p>{post.category}</p>
+                            <p>{post.cost}</p>
+                            
+                        </div>
+                    )}
+                
+            </div>
+
         </div>
-    );
+        
+     )
+    }
 }
 
 export default Home;
