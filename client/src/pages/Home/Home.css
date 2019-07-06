@@ -31,6 +31,10 @@
 #main-logo{
 font-size: 80px;
 }
+#image-1 {
+    width: 180px;
+    height: 150px;
+}
 
 .Parent-div{
 /* border: 3px solid red; */
@@ -49,9 +53,3 @@ background-color: #c0c0c0;
 #data-div {
     padding: 1rem;
 }
-/* #child-div{
-
-margin: 2rem;
-background-color: #333131;
-
-} */

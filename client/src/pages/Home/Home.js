@@ -32,9 +32,7 @@ class Home extends Component {
             </div>
                 < Nav />
             <div className="equipment-div">
-                <div id="categories">
-                    
-                </div>
+                
                     {this.state.posts.map((post, key) =>
                         <div className="Parent-div"key={key} >
                             
