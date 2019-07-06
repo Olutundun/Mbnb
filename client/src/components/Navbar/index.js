@@ -48,10 +48,10 @@ class Navbar extends Component {
                         {loggedIn ? (
                             <React.Fragment>
                                 <li className="nav-item">
-                                    <h3 style={{ color: "pink" }} className="navbar-text m-1">Hello {this.props.username}!</h3>
+                                    <h3 style={{ color: "cyan" }} className="navbar-text m-1">Hello {this.props.username}!</h3>
                                 </li>
                                 <li className="nav-item">
-                                    <button className="btn btn-success" id="logout-link" onClick={this.signout}>Sign Out</button>
+                                    <button className="btn btn-primary" id="logout-link" onClick={this.signout}>Sign Out</button>
                                 </li>
                             </React.Fragment>
                         ) : (

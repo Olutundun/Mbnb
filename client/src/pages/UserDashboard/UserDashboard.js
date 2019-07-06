@@ -22,8 +22,23 @@ class UserDashboard extends Component {
     images: "",
     imageUpload: "",
     shown: false,
-    spinner: false,
-    successfulUpload: false
+    successfulUpload: false,
+    slug: "",
+    spinner: false
+  }
+   slugify = (string) => {
+    const a = 'àáäâãåăæąçćčđèéėëêęǵḧìíïîįłḿǹńňñòóöôœøṕŕřßśšșťțùúüûǘůűūųẃẍÿýźžż·/_,:;'
+    const b = 'aaaaaaaaacccdeeeeeeghiiiiilmnnnnooooooprrssssttuuuuuuuuuwxyyzzz------'
+    const p = new RegExp(a.split('').join('|'), 'g')
+  
+    return string.toString().toLowerCase()
+      .replace(/\s+/g, '-') // Replace spaces with -
+      .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
+      .replace(/&/g, '-and-') // Replace & with 'and'
+      .replace(/[^\w\-]+/g, '') // Remove all non-word characters
+      .replace(/\-\-+/g, '-') // Replace multiple - with single -
+      .replace(/^-+/, '') // Trim - from start of text
+      .replace(/-+$/, '') // Trim - from end of text
   }
 
   toggle() {
@@ -66,13 +81,17 @@ class UserDashboard extends Component {
     // e.preventDefault();
 
     console.log("submitted!")
+
+    let slugData = this.slugify(this.state.itemName)
+
     const formData = {
       itemName: this.state.itemName,
       itemDescription: this.state.itemDescription,
       cost: this.state.cost,
       category: this.state.category,
       UserId: this.props.userid,
-      images: this.state.images
+      images: this.state.images,
+      slug: slugData
     }
     console.log(formData);
     console.log(formData.UserId)
@@ -199,10 +218,6 @@ class UserDashboard extends Component {
                   <br></br>
                   <div>{this.state.successfulUpload && <p>Image Uploaded Successfully</p>}</div>
                   <br></br>
-
-
-
-                  <button className="btn btn-success" onClick={(e) => this.handleImgurUpload(e)}>Upload Image</button>
 
                   <button className="btn btn-success" onClick={this.handleImgurUpload}>Upload Image</button>
                   {/* {this.state.successfulUpload && <p>hey we did it</p>} */}
