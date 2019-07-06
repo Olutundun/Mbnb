@@ -20,7 +20,8 @@ class UserDashboard extends Component {
     category: "",
     images: "",
     imageUpload: "",
-    shown: false
+    shown: false,
+    successfulUpload: false
 
   }
 
@@ -54,12 +55,13 @@ class UserDashboard extends Component {
       console.log(res.data.data.link);
       let photo = res.data.data.link;
       this.setState({ images: photo })
+      this.setState({images: photo, successfulUpload: true })
     })
 
   }
 
   handleFormSubmit = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
 
     console.log("submitted!")
     const formData = {
@@ -110,7 +112,7 @@ class UserDashboard extends Component {
         <table className="table table-dark table-striped table-bordered table-hover" >
           <thead>
             <tr>
-              <th>Id</th>
+              {/* <th>Id</th> */}
               <th>Item</th>
               <th>Image</th>
               <th>Cost per day</th>
@@ -121,9 +123,9 @@ class UserDashboard extends Component {
           <tbody>
             {this.state.posts.map(post =>
               <tr key={post.id}>
-                <td>{post.id}</td>
+                {/* <td>{post.id}</td> */}
                 <td>{post.itemName}</td>
-                <td><img src ={post.images} alt="music equipment"></img></td>
+                <td ><img src ={post.images} id ="table-image" alt="music equipment"></img></td>
                 <td>{post.cost}</td>
                 <td>{post.itemDescription}</td>
                 <td>{post.category}</td>
@@ -160,7 +162,7 @@ class UserDashboard extends Component {
                   <option >Select Category</option>
                   <option value="Guitar/Base">Guitar/Base</option>
                   <option value="Drum Sets">Drum sets</option>
-                  <option value="DJ Equipments">DJ Equipment</option>
+                  <option value="DJ Equipment">DJ Equipment</option>
                   <option value="Stage Lighting">Stage Lighting</option>
                   <option value="Keyboards">Keyboards</option>
                 </select>
@@ -171,8 +173,10 @@ class UserDashboard extends Component {
                   <label className="custom-file-label" htmlFor="customFile">{this.state.imageUpload ? this.state.imageUpload.name : 'Choose file'}</label>
                 </div>
                 <br></br>
+                <div>{this.state.successfulUpload && <p>Image Uploaded Successfully</p>}</div>
                 <br></br>
-                <button className="btn btn-success" onClick={(e) => this.handleImgurUpload(e)}>Upload Image</button>
+                <button className="btn btn-success" onClick = {this.handleImgurUpload}>Upload Image</button>
+	            {/* {this.state.successfulUpload && <p>hey we did it</p>} */}
 
                 <br></br>
                 <br></br>

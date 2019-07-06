@@ -33,13 +33,17 @@ font-size: 80px;
 }
 
 .Parent-div{
-border: 3px solid red;
+/* border: 3px solid red; */
 width: 25rem;
+height: 25rem;
 margin: 2rem;
+overflow: hidden;
+background-color: #c0c0c0;
 }
 #image-top{
-    width: 350px;
+    width: 400px;
     height: 250px;
+    
 }
 /* #child-div{
 
