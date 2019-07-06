@@ -3,7 +3,7 @@
 body {
   font-family: 'Lato', sans-serif;
   box-sizing: border-box;
-  
+  background-color: #000000;
 }
 
 @media (max-width: 1515px) {
