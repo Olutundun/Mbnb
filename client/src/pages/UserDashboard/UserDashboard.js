@@ -21,7 +21,8 @@ class UserDashboard extends Component {
     images: "",
     imageUpload: "",
     shown: false,
-    successfulUpload: false
+    successfulUpload: false,
+    slug: ""
 
   }
 
@@ -70,7 +71,8 @@ class UserDashboard extends Component {
       cost: this.state.cost,
       category: this.state.category,
       UserId: this.props.userid,
-      images: this.state.images
+      images: this.state.images,
+      slug: this.state.itemName
     }
     console.log(formData);
     console.log(formData.UserId)
