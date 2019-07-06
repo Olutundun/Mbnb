@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link, Redirect } from 'react-router-dom';
+import "./Signup.css";
 
 class Signup extends Component {
     constructor(props) {
@@ -70,10 +71,11 @@ class Signup extends Component {
             return <Redirect to={{ pathname: this.state.redirectTo }} />
         }
         return (
-            <div className="container col-md-6 m-5">
-                <h3>Fill out the form to get started!</h3>
+            <div id="background-image">
+            <div className="container">
+                <h3 id="form-header">Fill out the form to get started!</h3>
                 <form>
-                    <div className="col-auto">
+                    <div className="jumbotron" id="main-jumbo">
                         <label className="sr-only" htmlFor="inlineFormInputGroup">Username</label>
                         <div className="input-group mb-2">
                             <div className="input-group-prepend">
@@ -81,7 +83,7 @@ class Signup extends Component {
                                 <input name="username" value={this.state.username} onChange={this.handleInputChange} type="text" className="form-control" id="inlineFormInputGroup" placeholder="Enter username"></input>
                             </div>
                         </div>
-                    </div>
+                    
                     <div className="form-group">
                         <label htmlFor="Email"> Email Address</label>
                         <input name="email" value={this.state.email} onChange={this.handleInputChange} type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email"></input>
@@ -101,7 +103,9 @@ class Signup extends Component {
                     <div className="text-center">
                         <Link to="/Signin" className="sign-up">Already have an account? Login here!</Link>
                     </div>
+                    </div>
                 </form>
+            </div>
             </div>
         );
     }

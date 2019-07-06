@@ -84,28 +84,31 @@ class Signin extends Component {
             return <Redirect to={{ pathname: this.state.redirectTo }} />
         }
         return (
-            <div className="container col-md-6 m-5">
-                <h1>Sign In</h1>
+            <div id="sign-in-background">
+            <div className="container">
+                <h1 id="sign-in">Sign In</h1>
                 <form>
-                    <div className="col-auto">
-                        <label className="sr-only" htmlFor="inlineFormInputGroup">Username</label>
-                        <div className="input-group mb-2">
-                            <div className="input-group-prepend">
-                                <div className="input-group-text">@</div>
-                                <input name="username" value={this.state.username} onChange={this.handleInputChange} type="text" className="form-control" id="inlineFormInputGroup" placeholder="Enter username"></input>
+                    <div className="jumbotron" id="jumbotron-color">
+                            <label className="sr-only" htmlFor="inlineFormInputGroup">Username</label>
+                            <div className="input-group mb-2">
+                                <div className="input-group-prepend">
+                                    <div className="input-group-text">@</div>
+                                    <input name="username" value={this.state.username} onChange={this.handleInputChange} type="text" className="form-control" id="inlineFormInputGroup" placeholder="Enter username"></input>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="Password"> Password </label>
-                        <input name="password" value={this.state.password} onChange={this.handleInputChange} type="password" className="form-control" id="Password" placeholder="Enter password"></input>
+                        
+                        <div className="form-group">
+                            <label htmlFor="Password"> Password </label>
+                            <input name="password" value={this.state.password} onChange={this.handleInputChange} type="password" className="form-control" id="Password" placeholder="Enter password"></input>
 
+                        </div>
+                        <button onClick={this.handleFormSubmit} type="submit" className="btn btn-primary">Submit</button>
+                        <div className="text-center">
+                                <Link to="/Signup" className="sign-up">New to Mbnb? Sign Up here!</Link>
+                            </div>
                     </div>
-                    <button onClick={this.handleFormSubmit} type="submit" className="btn btn-primary">Submit</button>
-                    <div className="text-center">
-                              <Link to="/Signup" className="sign-up">New to Mbnb? Sign Up here!</Link>
-                          </div>
                 </form>
+            </div>
             </div>
         );
     }
