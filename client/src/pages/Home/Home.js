@@ -29,12 +29,13 @@ class Home extends Component {
                 <div className="react-container">
                 <h2 id="category-heading">Categories</h2>
                     <div id="category">
-                        <img id="image-1" src="/images/amp.jpg"></img>
-                        <img id="image-1" src="/images/amp.jpg"></img>
-                        <img id="image-1" src="/images/amp.jpg"></img>
-                        <img id="image-1" src="/images/amp.jpg"></img>
-                        <img id="image-1" src="/images/amp.jpg"></img>
+                        <img id="image-1" src="/images/amp.jpg" alt="category"></img>
+                        <img id="image-1" src="/images/amp.jpg" alt="category"></img>
+                        <img id="image-1" src="/images/amp.jpg" alt="category"></img>
+                        <img id="image-1" src="/images/amp.jpg" alt="category"></img>
+                        <img id="image-1" src="/images/amp.jpg" alt="category"></img>
                     </div>
+                    <h2 id="category-heading">Browse All</h2>
                     <div className="equipment-div">
                         {this.state.posts.map((post, key) =>
                             <div className="Parent-div" key={key} >
