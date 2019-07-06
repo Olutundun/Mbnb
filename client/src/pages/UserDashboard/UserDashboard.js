@@ -142,12 +142,12 @@ class UserDashboard extends Component {
 
         <br></br>
 
-        <div>
-          {/* When post button is  closed */}
-          <div className="container p-2 text-center" style={hidden}>
-            <h4>Got Some music equipments to rent, post it by clicking button below!</h4>
-            <h4>Happy renting!</h4>
-          </div>
+          <div>
+            {/* When post button is  closed */}
+            <div className="container p-2 text-center" style={hidden}>
+              <h4>Got Some music equipments to rent, post it by clicking button below!</h4>
+              <h4>Happy renting!</h4>
+            </div>
 
           <div className="text-center">
             <button className="btn btn-dark mb-2 btn-lg" onClick={this.toggle.bind(this)}>Post New Rental</button>
