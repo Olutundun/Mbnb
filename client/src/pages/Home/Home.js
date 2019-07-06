@@ -69,6 +69,7 @@ class Home extends Component {
                             <p>Description: {post.itemDescription}</p>
                             <p>Category: {post.category}</p>
                             <p>Cost: ${post.cost}</p>
+                            <button>Rent Me!</button>
                             </div>
                             </div>
                         )}

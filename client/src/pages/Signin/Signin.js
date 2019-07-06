@@ -96,7 +96,7 @@ class Signin extends Component {
 
                         <form className="container form">
                             <div className="form-group">
-                                <label for="username">Username</label>
+                                <label htmlFor="username">Username</label>
                                 <input name="username" value={this.state.username} onChange={this.handleInputChange} type="text" className="form-control" id="inlineFormInputGroup" placeholder="Enter username"></input>
                             </div>
 
@@ -106,7 +106,7 @@ class Signin extends Component {
                             </div>
 
                             <div className="text-center p-3">
-                                <button onClick={this.handleFormSubmit} type="submit" class="btn btn-primary">Submit</button>
+                                <button onClick={this.handleFormSubmit} type="submit" className="btn btn-primary">Submit</button>
                             </div>
 
                             <div className="text-center">
