@@ -2,13 +2,30 @@ const db = require("../../models")
 const router = require("express").Router();
 
 router
-    .route("/api/items")
+    .route("/api/items/:id")
     .get((req, res) => {
-        db.Item.findAll({}).then(function (item) {
-            //console.log(item)
-            res.json(item);
+        const query = {};
+        if (req.query.userid) {
+            query.UserId = req.query.id;
+        }
+        db.Item.findAll({
+            where: {
+                UserId: req.params.id
+            }
+        }).then(function (item) {
+            res.json(item)
         })
-    });
+    })
+
+
+router
+.route("/api/items")
+.get((req, res) => {
+    db.Item.findAll({}).then(function (item) {
+        //console.log(item)
+        res.json(item);
+    })
+});
 
 router
     .route("/api/items")
@@ -18,18 +35,5 @@ router
             res.json(item)
         })
     })
-
-    router
-    .route("/api/items/:id")
-    .get((req, res) => {
-        db.Item.findAll({
-            where: {
-                id: req.params.id
-            }
-            }).then(function (item) {
-            res.json(item)
-        })
-    })
-
 
 module.exports = router;
