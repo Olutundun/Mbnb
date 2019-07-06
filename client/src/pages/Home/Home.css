@@ -1,14 +1,56 @@
-
-
-#headline  {
-    background-color: #ffffff;opacity: 0.7;
-    
-
+.equipment-div {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 4.4rem 10%;
+    background-color: #000000
 }
-body {
-    background-image: url("/images/guitars-amps.jpg");
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-size: cover;
-    min-height: 100vh;
+.react-container {
+    background-color: #000000;
+}
+.logo{
+    position: relative;
+    top: 125px;
+    left: 125px;
+    color: #ffffff;
+    
+}
+#main-logo{
+font-size: 80px;
+}
+#category-heading{
+    text-align: center;
+    color: #ffffff;
+    background-color: #000000;
+    margin: 0;
+    padding: 2rem 0;
+}
+#category {
+    background-color: #000000;
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+#image-1 {
+    width: 180px;
+    height: 150px;
+}
+
+.Parent-div{
+/* border: 3px solid red; */
+width: 25rem;
+/* height: 100%; */
+margin: 2rem;
+overflow: hidden;
+background-color: #c0c0c0;
+border-radius: 10px;
+box-shadow: 10px 10px 10px #292828;
+}
+#image-top{
+    width: 400px;
+    height: 300px;
+    
+}
+#data-div {
+    padding: 1rem;
 }

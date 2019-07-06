@@ -8,6 +8,8 @@
 h2 {
     border-bottom: 2px solid #000000;
     padding: 3px;
+.posted-item {
+    border-bottom: 3px solid #000000;
 }
 
 .postForm{
@@ -16,3 +18,7 @@ h2 {
 
 }
 
+
+#table-image{
+    max-width:180px;
+  }
