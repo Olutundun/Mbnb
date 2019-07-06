@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import React, { Component } from "react";
 import "./Home.css";
-// import axios from "axios";
+// import { Link, Redirect } from "react-router-dom";
 import Slide from "../../components/Slider";
 
 class Home extends Component {

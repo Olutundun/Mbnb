@@ -36,4 +36,29 @@ router
         })
     })
 
+    router
+    .route("/api/items/:id")
+    .get((req, res) => {
+        db.Item.findAll({
+            where: {
+                id: req.params.id
+            }
+            }).then(function (item) {
+            res.json(item)
+        })
+    })
+
+    router
+        .route("/api/item/:slug")
+        .get((req,res) => {
+            db.Item.findOne({
+                where: {
+                    slug: req.params.slug
+                }
+            }).then(function (item) {
+                res.json(item);
+            })
+        });
+
+
 module.exports = router;

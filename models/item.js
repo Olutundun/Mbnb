@@ -21,10 +21,15 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.BOOLEAN,
       defaultValue: false
     },
+    slug: {
+      type:DataTypes.STRING,
+      allowNull: true
+    },
     category: {
       type: DataTypes.STRING
     },
     images: DataTypes.STRING,
+    
   });
   Item.associate = function (models) {
     Item.belongsTo(models.User, {

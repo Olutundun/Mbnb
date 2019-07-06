@@ -6,6 +6,7 @@ import UserDashboard from './pages/UserDashboard/UserDashboard';
 import NotFound from './pages/NotFound/NotFound';
 import Signin from './pages/Signin/Signin';
 import Signup from './pages/Signup/Signup';
+import ItemPage from './pages/ItemPage/index';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends Component {
@@ -85,6 +86,7 @@ render() {
           <Route exact path="/UserDashboard" render={(props) => <UserDashboard {...props} loggedIn={this.state.loggedIn} username={this.state.username} userid={this.state.userid} />} />
           <Route exact path="/Signin" render={() => <Signin updateUser={this.updateUser} />} />
           <Route exact path="/Signup" render={() => <Signup updateUser={this.updateUser} />} />
+          <Route exact path="/ItemPage" component={ItemPage} />
           <Route component={NotFound} />
         </Switch>
       </div>
