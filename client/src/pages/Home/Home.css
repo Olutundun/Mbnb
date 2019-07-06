@@ -18,6 +18,19 @@
 #main-logo{
 font-size: 80px;
 }
+#category-heading{
+    text-align: center;
+    color: #ffffff;
+    background-color: #000000;
+    margin: 0;
+    padding: 2rem 0;
+}
+#category {
+    background-color: #000000;
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+}
 #image-1 {
     width: 180px;
     height: 150px;
@@ -30,16 +43,14 @@ width: 25rem;
 margin: 2rem;
 overflow: hidden;
 background-color: #c0c0c0;
-
+border-radius: 10px;
+box-shadow: 10px 10px 10px #292828;
 }
 #image-top{
     width: 400px;
     height: 300px;
     
 }
-/* #child-div{
-
-margin: 2rem;
-background-color: #333131;
-
-} */
+#data-div {
+    padding: 1rem;
+}

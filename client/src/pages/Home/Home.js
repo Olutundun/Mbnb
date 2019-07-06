@@ -27,14 +27,25 @@ class Home extends Component {
             <div>
                 <Slide />
                 <div className="react-container">
+                <h2 id="category-heading">Categories</h2>
+                    <div id="category">
+                        <img id="image-1" src="/images/amp.jpg" alt="category"></img>
+                        <img id="image-1" src="/images/amp.jpg" alt="category"></img>
+                        <img id="image-1" src="/images/amp.jpg" alt="category"></img>
+                        <img id="image-1" src="/images/amp.jpg" alt="category"></img>
+                        <img id="image-1" src="/images/amp.jpg" alt="category"></img>
+                    </div>
+                    <h2 id="category-heading">Browse All</h2>
                     <div className="equipment-div">
                         {this.state.posts.map((post, key) =>
                             <div className="Parent-div" key={key} >
                                 <img id="image-top" src={post.images} alt="music equipment"></img>
-                                <p>{post.itemName}</p>
-                                <p>{post.itemDescription}</p>
-                                <p>{post.category}</p>
-                                <p>{post.cost}</p>
+                                <div id="data-div">
+                            <p>{post.itemName}</p>
+                            <p>Description: {post.itemDescription}</p>
+                            <p>Category: {post.category}</p>
+                            <p>Cost: ${post.cost}</p>
+                            </div>
                             </div>
                         )}
                     </div>
