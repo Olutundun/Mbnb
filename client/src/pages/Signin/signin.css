@@ -3,3 +3,13 @@ html body div#root div div.container.col-md-6.m-5 {
     background-color: #ffffff;opacity: 0.7;
 
 }
+#sign-in {
+    color: #ffffff;
+}
+#sign-in-background {
+    background-image: url("/images/background-wave.jpg");
+    height: 100vh;
+}
+#jumbotron-color{
+    opacity: .95;
+}
