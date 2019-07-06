@@ -57,10 +57,10 @@ class Navbar extends Component {
                         ) : (
                                 <React.Fragment>
                                     <li className="nav-item">
-                                        <Link className="nav-link menu" to="/Signup">Sign Up</Link>
+                                        <Link id="signUp" className="nav-link menu" to="/Signup">Sign Up</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link className="nav-link menu" to="/Signin">Sign In</Link>
+                                        <Link id="signIn" className="nav-link menu" to="/Signin">Sign In</Link>
                                     </li>
                                 </React.Fragment>
                             )}
