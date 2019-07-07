@@ -190,10 +190,10 @@ class UserDashboard extends Component {
                 <label htmlFor="category">Category select</label>
                 <select name="category" value={this.state.category} onChange={this.handleInputChange} className="form-control" id="exampleFormControlSelect1">
                   <option >Select Category</option>
-                  <option value="Guitar/Base">Guitar/Base</option>
-                  <option value="Drum Sets">Drum sets</option>
-                  <option value="DJ Equipment">DJ Equipment</option>
-                  <option value="Stage Lighting">Stage Lighting</option>
+                  <option value="Guitar">Guitar/Base</option>
+                  <option value="Drums">Drum sets</option>
+                  <option value="Amplifiers">Amplifiers</option>
+                  <option value="Percussion">Percussion</option>
                   <option value="Keyboards">Keyboards</option>
                   <option value="Other">Other</option>
                 </select>
