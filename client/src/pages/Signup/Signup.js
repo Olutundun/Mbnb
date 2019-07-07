@@ -102,7 +102,7 @@ class Signup extends Component {
                             </div>
 
                             <div className="text-center p-3">
-                                <Link to="/Signin"><button onClick={this.handleFormSubmit} type="submit" className="btn btn-danger">Sign up!</button></Link>
+                             <button onClick={this.handleFormSubmit} type="submit" className="btn btn-danger">Sign up!</button>
                             </div>
 
                             <div className="text-center">

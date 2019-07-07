@@ -40,7 +40,9 @@ font-size: 80px;
 #category-heading {
     font-family: 'Asap Condensed', sans-serif;
 }
-
+hr {
+    border: 4px solid white;
+}
 .Parent-div{
 /* border: 3px solid red; */
 width: 25rem;
@@ -63,4 +65,8 @@ box-shadow: 10px 10px 10px #292828;
 
 h6 {
     color: whitesmoke;
+}
+
+html {
+    background-color: #ffffff;
 }
