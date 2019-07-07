@@ -4,3 +4,7 @@ img {
 li {
     margin: 0 1rem; 
 }
+
+.nav-item button:hover {
+   background-color: #970e75;
+}

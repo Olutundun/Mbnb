@@ -44,12 +44,12 @@ class Navbar extends Component {
         return (
             <div>
                 <nav className="navbar nav bg-light nav-pills">
-                   <img src="./images/logo.png" alt="logo"></img>
+                    <Link to="/"><img src="./images/logo.png" alt="logo"></img></Link>
                     <ul className="navbar-nav d-flex flex-row ">
                         {loggedIn ? (
                             <React.Fragment>
                                 <li className="nav-item">
-                                <i class="fab fa-napster"></i>
+                                    <i class="fab fa-napster"></i>
                                     <h3 className="navbar-text m-1">Hello {this.props.username}!</h3>
                                 </li>
                                 <li className="nav-item">
@@ -59,10 +59,12 @@ class Navbar extends Component {
                         ) : (
                                 <React.Fragment>
                                     <li className="nav-item">
-                                        <Link id="signUp" className="nav-link menu" to="/Signup">Sign Up</Link>
+                                        <Link to="/Signup"><button type="button" className="btn btn-dark">Sign up</button></Link>
+
                                     </li>
                                     <li className="nav-item">
-                                        <Link id="signIn" className="nav-link menu" to="/Signin">Sign In</Link>
+                                        <Link to="/Signin"><button type="button" className="btn btn-warning">Sign in</button></Link>
+
                                     </li>
                                 </React.Fragment>
                             )}
