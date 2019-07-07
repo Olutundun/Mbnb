@@ -7,6 +7,13 @@ import NotFound from './pages/NotFound/NotFound';
 import Signin from './pages/Signin/Signin';
 import Signup from './pages/Signup/Signup';
 import ItemPage from './pages/ItemPage/index';
+
+import Guitar from './pages/Guitar/Guitar';
+import Amplifiers from './pages/Amplifiers/Amplifiers';
+import Percussion from './pages/Percussion/Percussion';
+import Keyboards from './pages/Keyboards/Keyboards';
+import Drums from './pages/Drums/Drums';
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends Component {
@@ -87,6 +94,11 @@ render() {
           <Route exact path="/Signin" render={() => <Signin updateUser={this.updateUser} />} />
           <Route exact path="/Signup" render={() => <Signup updateUser={this.updateUser} />} />
           <Route exact path="/ItemPage" component={ItemPage} />
+          <Route exact path="/Guitar" component={Guitar} />
+          <Route exact path="/Amplifiers" component={Amplifiers} />
+          <Route exact path="/Percussion" component={Percussion} />
+          <Route exact path="/Keyboards" component={Keyboards} />
+          <Route exact path="/Drums" component={Drums} />
           <Route component={NotFound} />
         </Switch>
       </div>
