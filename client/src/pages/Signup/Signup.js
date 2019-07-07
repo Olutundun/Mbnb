@@ -75,14 +75,9 @@ class Signup extends Component {
             <div className="container">
                 <div className=" signIn card">
                     <div className="card-header cardHeader">
-                        <h4>Please sign up to Mbnb</h4>
+                        <h1>Create an Account with MBnB.  <i className="fas fa-music"></i></h1>
                     </div>
                     <div className="card-body">
-                        <div className="text-center">
-                            <h4 className="card-title p-3">We are glad you are here!</h4>
-                            <h4 className="card-title mb-2">Let's Sign up!</h4>
-                        </div>
-
                         <form className="container form">
 
                             <div className="form-group">
@@ -107,7 +102,7 @@ class Signup extends Component {
                             </div>
 
                             <div className="text-center p-3">
-                                <button onClick={this.handleFormSubmit} type="submit" className="btn btn-primary">Submit</button>
+                                <Link to="/Signin"><button onClick={this.handleFormSubmit} type="submit" className="btn btn-danger">Sign up!</button></Link>
                             </div>
 
                             <div className="text-center">

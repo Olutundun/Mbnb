@@ -1,25 +1,9 @@
-/* html body div#root div div.container.col-md-6.m-5 {
-
-    background-color: #ffffff;opacity: 0.7;
-
-} */
-
 .signIn{
 margin-top:30px;
-
 }
 
 
-
-.form{
+h1 {
+    text-align: center;
+    font-size: 35px;
 }
-/* #sign-in {
-    color: #ffffff;
-    margin: 0;
-    padding: 2rem 0;
-}*/
-#sign-in-background {
-    background-color: #747070;
-    background-image: url("/images/background-wave.jpg");
-    height: 100vh; 
-} 

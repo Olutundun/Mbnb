@@ -1,13 +1,15 @@
-
-#background-image {
-    background-image: url("/images/meters.jpg");
-    height: 100vh;
+body {
+    background-image: url("/images/bg.jpg");
 }
 
-#form-header {
-    color: #ffffff;
-    padding: 1rem 0;
+.container {
+    opacity: 0.9;
+    color: #0f0808;
+    font-weight: bold;
+    font-family: 'Reenie+Beanie';
 }
-#main-jumbo {
-    opacity: .95;
+
+h1 {
+    text-align: center;
+    font-size: 35px;
 }
