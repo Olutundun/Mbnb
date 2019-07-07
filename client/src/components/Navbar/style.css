@@ -1,4 +1,6 @@
-
+img {
+    width: 50px;
+}
 li {
     margin: 0 1rem; 
 }

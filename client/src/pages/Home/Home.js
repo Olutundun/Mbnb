@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import React, { Component } from "react";
 import "./Home.css";
-// import { Link, Redirect } from "react-router-dom";
 import Slide from "../../components/Slider";
 
 class Home extends Component {
@@ -22,7 +21,6 @@ class Home extends Component {
     }
 
     render() {
-
         return (
             <div>
                 <Slide />

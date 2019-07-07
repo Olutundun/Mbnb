@@ -11,6 +11,22 @@ body {
     max-width: 100%;
   } 
 }
+ 
+  @font-face{
+    font-family: "musicFont";
+    src: url("../../font.ttf")format("truetype");
+  }
+
+  #compName {
+   font-family: "musicFont";
+   font-size: 7rem;
+   letter-spacing: 15px;
+   color: #FFFFFF;
+  }
+
+  #compTitle {
+    font-family: 'Merienda', cursive;
+  }
 
 * {
   outline: none;

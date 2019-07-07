@@ -130,7 +130,7 @@ class UserDashboard extends Component {
 
     return (
       <div className="container mainContainer p-5">
-        <h2>Your Posted Items</h2>
+        <h2>Your Posted Items:</h2>
         <table className="table table-dark table-striped table-bordered table-hover p-2">
           <table className="table table-dark table-striped table-bordered table-hover" >
 
@@ -163,7 +163,7 @@ class UserDashboard extends Component {
         <div>
           {/* When post button is  closed */}
           <div className="container p-2 text-center" style={hidden}>
-            <h4>Got Some music equipments to rent, post it by clicking button below!</h4>
+            <h4>Got music equipments to rent? Post it by clicking button below!</h4>
             <h4>Happy renting!</h4>
           </div>
 

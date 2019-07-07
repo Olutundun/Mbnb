@@ -37,6 +37,10 @@ font-size: 80px;
     height: 150px;
 }
 
+#category-heading {
+    font-family: 'Cinzel Decorative', cursive;
+}
+
 .Parent-div{
 /* border: 3px solid red; */
 width: 25rem;
