@@ -25,6 +25,8 @@ class Home extends Component {
             <div>
                 <Slide />
                 <div className="react-container">
+          
+                <hr></hr>
                 <h2 id="category-heading">Categories</h2>
                     <div id="category">
                         <div className="text-center">
@@ -57,6 +59,7 @@ class Home extends Component {
                         </div>
 
                     </div>
+                    <hr></hr>
                     <h2 id="category-heading">Browse All</h2>
                     <div className="equipment-div">
                         {this.state.posts.map((post, key) =>
