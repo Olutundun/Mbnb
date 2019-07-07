@@ -2,11 +2,12 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin: 4.4rem 10%;
-    background-color: #000000
+    background-color: #ffffff;
+    height: 16.66rem;
+    margin-bottom: 1rem;
 }
 .react-container {
-    background-color: #000000;
+    background-color: #ffffff;
 }
 .logo{
     position: relative;
@@ -36,6 +37,10 @@ font-size: 80px;
     height: 150px;
 }
 
+#category-heading {
+    font-family: 'Cinzel Decorative', cursive;
+}
+
 .Parent-div{
 /* border: 3px solid red; */
 width: 25rem;
@@ -53,6 +58,7 @@ box-shadow: 10px 10px 10px #292828;
 }
 #data-div {
     padding: 1rem;
+    
 }
 
 h6 {
