@@ -34,26 +34,26 @@ class Home extends Component {
                 <h2 id="category-heading">Categories</h2>
                     <div id="category-div">
                         
-                        <div className="text-center">
+                        <div className="img-icon text-center">
                         <a href="./Amplifiers"><img id="image-1" src="/images/amp.jpg" alt="category"></img></a>
                         <h6 className="m-2">Amplifiers</h6>
                         </div>
                         
-                        <div className="text-center">
+                        <div className="img-icon text-center">
                         <a href="./Percussion"><img id="image-1" src="/images/drums.jpg" alt="category"></img></a>
                         <h6 className="m-2">Percussion</h6>
                         </div>
-                        <div className="text-center">
+                        <div className="img-icon text-center">
                         <a href="./Keyboards"><img id="image-1" src="/images/keyboard.jpg" alt="category"></img></a>
                         <h6 className="m-2">Keyboards</h6>
                         </div>
                         
-                        <div className="text-center">
+                        <div className="img-icon text-center">
                         <a href="./DjEquipment"><img id="image-1" src="/images/technics-table.jpg" alt="category"></img></a>
                         <h6 className="m-2">DJ Equipment</h6>
                         </div>
 
-                        <div className="text-center">
+                        <div className="img-icon text-center">
                         <a href="./guitar"><img id="image-1" src="/images/guitar.jpg" alt="category"></img></a>
                         <h6 className="m-2">Guitars</h6>
                         </div>
