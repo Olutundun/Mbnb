@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import "./Drums.css";
+import "./DjEquipment.css";
+import { Link } from "react-router-dom";
 
 
 class Drums extends Component {
     constructor(props) {
         super(props);
-        fetch('http://localhost:3001/api/category/Drums')
+        fetch('http://localhost:3001/api/category/DjEquipment')
             .then(response => response.json())
             .then(posts => (this.setState({ posts }))
             )
@@ -24,7 +25,7 @@ class Drums extends Component {
             <div>
                 <div className="jumbotron jumbotron-fluid banner">
                     <div className="container">
-                        <h1 className="display-4">Drums</h1>
+                        <h1 className="display-4">Dj Equipment</h1>
                     </div>
                 </div>
                 <div className="equipment-div">
@@ -36,7 +37,7 @@ class Drums extends Component {
                                 <p>Description: {post.itemDescription}</p>
                                 <p>Category: {post.category}</p>
                                 <p>Cost: ${post.cost}</p>
-                                <button>Rent Me!</button>
+                                <Link to={"/ItemPage/" + post.slug}><button>Find Out More!</button></Link>
                             </div>
                         </div>
                     )}

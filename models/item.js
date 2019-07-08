@@ -28,6 +28,11 @@ module.exports = function (sequelize, DataTypes) {
     category: {
       type: DataTypes.STRING
     },
+    contact: {
+      type: DataTypes.STRING,
+      allowNull: true
+
+    },
     images: DataTypes.STRING,
     
   });

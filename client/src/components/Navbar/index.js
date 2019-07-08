@@ -49,7 +49,7 @@ class Navbar extends Component {
                         {loggedIn ? (
                             <React.Fragment>
                                 <li className="nav-item">
-                                    <i class="fab fa-napster"></i>
+                                    <i className="fab fa-napster"></i>
                                     <h3 className="navbar-text m-1">Hello {this.props.username}!</h3>
                                 </li>
                                 <li className="nav-item">

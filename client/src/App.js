@@ -7,12 +7,11 @@ import NotFound from './pages/NotFound/NotFound';
 import Signin from './pages/Signin/Signin';
 import Signup from './pages/Signup/Signup';
 import ItemPage from './pages/ItemPage/index';
-
 import Guitar from './pages/Guitar/Guitar';
 import Amplifiers from './pages/Amplifiers/Amplifiers';
 import Percussion from './pages/Percussion/Percussion';
 import Keyboards from './pages/Keyboards/Keyboards';
-import Drums from './pages/Drums/Drums';
+import DjEquipment from './pages/DjEquipment/DjEquipment';
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -93,12 +92,12 @@ render() {
           <Route exact path="/UserDashboard" render={(props) => <UserDashboard {...props} loggedIn={this.state.loggedIn} username={this.state.username} userid={this.state.userid} />} />
           <Route exact path="/Signin" render={() => <Signin updateUser={this.updateUser} />} />
           <Route exact path="/Signup" render={() => <Signup updateUser={this.updateUser} />} />
-          <Route exact path="/ItemPage" component={ItemPage} />
+          <Route exact path="/ItemPage/:slug" component={ItemPage} />
           <Route exact path="/Guitar" component={Guitar} />
           <Route exact path="/Amplifiers" component={Amplifiers} />
           <Route exact path="/Percussion" component={Percussion} />
           <Route exact path="/Keyboards" component={Keyboards} />
-          <Route exact path="/Drums" component={Drums} />
+          <Route exact path="/DjEquipment" component={DjEquipment} />
           <Route component={NotFound} />
         </Switch>
       </div>
