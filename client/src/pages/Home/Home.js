@@ -69,6 +69,9 @@ class Home extends Component {
                             <p>Description: {post.itemDescription}</p>
                             <p>Category: {post.category}</p>
                             <p>Cost: ${post.cost}</p>
+                            <div className="text-center">
+                                <button >Find out more</button>
+                            </div>
                             </div>
                             </div>
                         )}
