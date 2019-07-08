@@ -17,7 +17,7 @@ class Signup extends Component {
     }
     //add form validation
 
-    
+
 
     handleFormSubmit = (event) => {
         event.preventDefault();
@@ -71,42 +71,48 @@ class Signup extends Component {
             return <Redirect to={{ pathname: this.state.redirectTo }} />
         }
         return (
-            <div id="background-image">
+
             <div className="container">
-                <h3 id="form-header">Fill out the form to get started!</h3>
-                <form>
-                    <div className="jumbotron" id="main-jumbo">
-                        <label className="sr-only" htmlFor="inlineFormInputGroup">Username</label>
-                        <div className="input-group mb-2">
-                            <div className="input-group-prepend">
-                                <div className="input-group-text">@</div>
+                <div className=" signIn card">
+                    <div className="card-header cardHeader">
+                        <h1>Create an Account with MBnB.  <i className="fas fa-music"></i></h1>
+                    </div>
+                    <div className="card-body">
+                        <form className="container form">
+
+                            <div className="form-group">
+                                <label htmlFor="username">Username</label>
                                 <input name="username" value={this.state.username} onChange={this.handleInputChange} type="text" className="form-control" id="inlineFormInputGroup" placeholder="Enter username"></input>
                             </div>
-                        </div>
-                    
-                    <div className="form-group">
-                        <label htmlFor="Email"> Email Address</label>
-                        <input name="email" value={this.state.email} onChange={this.handleInputChange} type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email"></input>
-                        <small id="emailHelp" className="form-text text-muted"> We''ll never share your email with anyone else.</small>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="Password"> Password </label>
-                        <input name="password" value={this.state.password} onChange={this.handleInputChange} type="password" className="form-control" id="Password" placeholder="Enter password"></input>
 
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="Password"> Confirm Password </label>
-                        <input name="password" value={this.state.password} onChange={this.handleInputChange} type="password" className="form-control" id="Password2" placeholder="Confirm Password"></input>
+                            <div className="form-group">
+                                <label htmlFor="Email"> Email Address</label>
+                                <input name="email" value={this.state.email} onChange={this.handleInputChange} type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email"></input>
+                                <small id="emailHelp" className="form-text text-muted"> We''ll never share your email with anyone else.</small>
+                            </div>
 
+                            <div className="form-group">
+                                <label htmlFor="Password"> Password </label>
+                                <input name="password" value={this.state.password} onChange={this.handleInputChange} type="password" className="form-control" id="Password" placeholder="Enter password"></input>
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="Password"> Confirm Password </label>
+                                <input name="password" value={this.state.password} onChange={this.handleInputChange} type="password" className="form-control" id="Password2" placeholder="Confirm Password"></input>
+                            </div>
+
+                            <div className="text-center p-3">
+                             <button onClick={this.handleFormSubmit} type="submit" className="btn btn-danger">Sign up!</button>
+                            </div>
+
+                            <div className="text-center">
+                                <p>Already have an account?<Link to="/Signin" className="sign-up"> Login here!</Link></p>
+                            </div>
+
+                        </form>
                     </div>
-                    <button onClick={this.handleFormSubmit} type="submit" className="btn btn-primary">Submit</button>
-                    <div className="text-center">
-                        <Link to="/Signin" className="sign-up">Already have an account? Login here!</Link>
-                    </div>
-                    </div>
-                </form>
-            </div>
-            </div>
+                </div>
+            </div >
         );
     }
 }

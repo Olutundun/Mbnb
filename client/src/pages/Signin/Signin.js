@@ -41,7 +41,7 @@ class Signin extends Component {
         //     }).catch(function (err) {
         //         console.log(err)
         //     })
-        axios.post("/api/signin", 
+        axios.post("/api/signin",
             userData
         ).then(response => {
             console.log('signin response: ')
@@ -84,31 +84,34 @@ class Signin extends Component {
             return <Redirect to={{ pathname: this.state.redirectTo }} />
         }
         return (
-            <div id="sign-in-background">
             <div className="container">
-                <h1 id="sign-in">Sign In</h1>
-                <form>
-                    <div className="jumbotron" id="jumbotron-color">
-                            <label className="sr-only" htmlFor="inlineFormInputGroup">Username</label>
-                            <div className="input-group mb-2">
-                                <div className="input-group-prepend">
-                                    <div className="input-group-text">@</div>
-                                    <input name="username" value={this.state.username} onChange={this.handleInputChange} type="text" className="form-control" id="inlineFormInputGroup" placeholder="Enter username"></input>
-                                </div>
-                            </div>
-                        
-                        <div className="form-group">
-                            <label htmlFor="Password"> Password </label>
-                            <input name="password" value={this.state.password} onChange={this.handleInputChange} type="password" className="form-control" id="Password" placeholder="Enter password"></input>
-
-                        </div>
-                        <button onClick={this.handleFormSubmit} type="submit" className="btn btn-primary">Submit</button>
-                        <div className="text-center">
-                                <Link to="/Signup" className="sign-up">New to Mbnb? Sign Up here!</Link>
-                            </div>
+                <div className=" signIn card">
+                    <div className="card-header cardHeader">
+                        <h1>SIGN IN!</h1>
                     </div>
-                </form>
-            </div>
+                    <div className="card-body">
+                        <form className="container form">
+                            <div className="form-group">
+                                <label htmlFor="username">Username</label>
+                                <input name="username" value={this.state.username} onChange={this.handleInputChange} type="text" className="form-control" id="inlineFormInputGroup" placeholder="Enter username"></input>
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="Password"> Password </label>
+                                <input name="password" value={this.state.password} onChange={this.handleInputChange} type="password" className="form-control" id="Password" placeholder="Enter password"></input>
+                            </div>
+
+                            <div className="text-center p-3">
+                                <button onClick={this.handleFormSubmit} type="submit" className="btn btn-danger">SIGN IN!</button>
+                            </div>
+
+                            <div className="text-center">
+                                <p>New to Mbnb? <Link to="/Signup" className="signUp">Sign Up here!</Link></p>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
             </div>
         );
     }

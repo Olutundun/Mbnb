@@ -7,11 +7,13 @@ import './style.css';
 
 const content = [
 	{
+		name: 'MBnB',
 		title: 'Welcome to the new way to get the music equipment you need without breaking the bank.',
         image: './images/guitars-amps.jpg',
         button: 'Read More',
 	},
 	{
+		name: 'MBnB',
 		title: 'Sign up/Sign in to post images of your equipments.',
 		description:
 		'We are committed to connecting renters around the globe.',
@@ -37,8 +39,9 @@ const Slide = () => (
 					style={{ background: `url('${item.image}') no-repeat center center` }}
 				>
 					<div className="inner">
-						<h1>{item.title}</h1>
-						<p>{item.description}</p>
+						<p id="compName">{item.name}</p>
+						<h1 id="compTitle">{item.title}</h1>
+						<p id="compDesc">{item.description}</p>
 						<button>{item.button}</button>
 					</div>
 				</div>

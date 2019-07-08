@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
-import "./style.css"
+import "./style.css";
+
 class Navbar extends Component {
     constructor(props) {
         super()
@@ -42,13 +43,14 @@ class Navbar extends Component {
         console.log(this.props);
         return (
             <div>
-                <nav className="navbar nav bg-dark nav-pills">
-                    <Link className="navbar-brand" to="/">Mbnb</Link>
+                <nav className="navbar nav bg-light nav-pills">
+                    <Link to="/"><img src="./images/logo.png" alt="logo"></img></Link>
                     <ul className="navbar-nav d-flex flex-row ">
                         {loggedIn ? (
                             <React.Fragment>
                                 <li className="nav-item">
-                                    <h3 style={{ color: "cyan" }} className="navbar-text m-1">Hello {this.props.username}!</h3>
+                                    <i class="fab fa-napster"></i>
+                                    <h3 className="navbar-text m-1">Hello {this.props.username}!</h3>
                                 </li>
                                 <li className="nav-item">
                                     <button className="btn btn-primary" id="logout-link" onClick={this.signout}>Sign Out</button>
@@ -57,10 +59,12 @@ class Navbar extends Component {
                         ) : (
                                 <React.Fragment>
                                     <li className="nav-item">
-                                        <Link id="signUp" className="nav-link menu" to="/Signup">Sign Up</Link>
+                                        <Link to="/Signup"><button type="button" className="btn btn-dark">Sign up</button></Link>
+
                                     </li>
                                     <li className="nav-item">
-                                        <Link id="signIn" className="nav-link menu" to="/Signin">Sign In</Link>
+                                        <Link to="/Signin"><button type="button" className="btn btn-warning">Sign in</button></Link>
+
                                     </li>
                                 </React.Fragment>
                             )}
