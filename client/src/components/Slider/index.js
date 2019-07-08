@@ -10,21 +10,18 @@ const content = [
 		name: 'MBnB',
 		title: 'Welcome to the new way to get the music equipment you need without breaking the bank.',
         image: './images/guitars-amps.jpg',
-        button: 'Read More',
 	},
 	{
 		name: 'MBnB',
 		title: 'Sign up/Sign in to post images of your equipments.',
 		description:
 		'We are committed to connecting renters around the globe.',
-		button: 'Discover',
 		image: './images/mixer-mic.jpg',
 	},
 	{
 		title: 'Our Company',
 		description:
 		'Throughout the world, Mbnb unites people deeply, passionately and authentically.',
-		button: 'Rent now',
 		image: './images/globe.jpg',
 	}
 ];
@@ -42,7 +39,6 @@ const Slide = () => (
 						<p id="compName">{item.name}</p>
 						<h1 id="compTitle">{item.title}</h1>
 						<p id="compDesc">{item.description}</p>
-						<button>{item.button}</button>
 					</div>
 				</div>
 			))}
