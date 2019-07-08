@@ -53,8 +53,12 @@ class Navbar extends Component {
                                     <h3 className="navbar-text m-1">Hello {this.props.username}!</h3>
                                 </li>
                                 <li className="nav-item">
+                                    <Link to="/UserDashboard"><button className="btn btn-secondary">User Dashboard</button></Link>
+                                </li>
+                                <li className="nav-item">
                                     <button className="btn btn-primary" id="logout-link" onClick={this.signout}>Sign Out</button>
                                 </li>
+                                
                             </React.Fragment>
                         ) : (
                                 <React.Fragment>
