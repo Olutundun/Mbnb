@@ -37,6 +37,13 @@ font-size: 80px;
     flex-wrap: wrap;
     border-bottom: 8px solid #ffffff;
 }
+.img-icon {
+    transition: transform .2s;
+}
+.img-icon:hover {
+    transform: scale(1.2);
+}
+
 #image-1 {
     width: 180px;
     height: 150px;
