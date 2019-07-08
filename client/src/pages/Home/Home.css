@@ -8,6 +8,7 @@
 }
 .react-container {
     background-color: #ffffff;
+    margin: 0;
 }
 .logo{
     position: relative;
@@ -24,13 +25,17 @@ font-size: 80px;
     color: #ffffff;
     background-color: #000000;
     margin: 0;
-    padding: 2rem 0;
+    padding: 2rem;
+    border-bottom: 8px solid #ffffff;
+   
 }
-#category {
+#category-div {
     background-color: #000000;
-    padding: 2rem 3rem;
+    padding: 2rem 5rem;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    border-bottom: 8px solid #ffffff;
 }
 #image-1 {
     width: 180px;

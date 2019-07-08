@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Percussion.css";
+import { Link } from "react-router-dom";
 
 
 class Percussion extends Component {
@@ -36,7 +37,7 @@ class Percussion extends Component {
                                 <p>Description: {post.itemDescription}</p>
                                 <p>Category: {post.category}</p>
                                 <p>Cost: ${post.cost}</p>
-                                <button>Rent Me!</button>
+                                <Link to={"/ItemPage/" + post.slug}><button>Find Out More!</button></Link>
                             </div>
                         </div>
                     )}

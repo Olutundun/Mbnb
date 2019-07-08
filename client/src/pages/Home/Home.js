@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import "./Home.css";
 import Slide from "../../components/Slider";
+import { Link } from "react-router-dom";
 
 class Home extends Component {
     constructor(props) {
@@ -10,6 +11,7 @@ class Home extends Component {
             .then(response => response.json())
             .then(posts => (this.setState({ posts }))
             )
+            
     }
     state = {
         posts: [],
@@ -17,18 +19,20 @@ class Home extends Component {
         itemDescription: "",
         cost: "",
         category: "",
-        images: ""
+        images: "",
+        slug: ""
+       
     }
-
+    
     render() {
         return (
             <div>
                 <Slide />
                 <div className="react-container">
           
-                <hr></hr>
+                {/* <hr></hr> */}
                 <h2 id="category-heading">Categories</h2>
-                    <div id="category">
+                    <div id="category-div">
                         
                         <div className="text-center">
                         <a href="./Amplifiers"><img id="image-1" src="/images/amp.jpg" alt="category"></img></a>
@@ -45,8 +49,8 @@ class Home extends Component {
                         </div>
                         
                         <div className="text-center">
-                        <a href="./Drums"><img id="image-1" src="/images/bass.jpg" alt="category"></img></a>
-                        <h6 className="m-2">Drums</h6>
+                        <a href="./DjEquipment"><img id="image-1" src="/images/technics-table.jpg" alt="category"></img></a>
+                        <h6 className="m-2">DJ Equipment</h6>
                         </div>
 
                         <div className="text-center">
@@ -55,18 +59,16 @@ class Home extends Component {
                         </div>
 
                     </div>
-                    <hr></hr>
+                    
                     <h2 id="category-heading">Browse All</h2>
                     <div className="equipment-div">
                         {this.state.posts.map((post, key) =>
-                            <div className="Parent-div" key={key} >
+                            <div className="Parent-div text-center" key={key} >
                                 <img id="image-top" src={post.images} alt="music equipment"></img>
                                 <div id="data-div">
                             <p>{post.itemName}</p>
-                            <p>Description: {post.itemDescription}</p>
-                            <p>Category: {post.category}</p>
                             <p>Cost: ${post.cost}</p>
-                            <button>Rent Me!</button>
+                            <Link to={"/ItemPage/" + post.slug}><button>Find Out More!</button></Link>
                             </div>
                             </div>
                         )}

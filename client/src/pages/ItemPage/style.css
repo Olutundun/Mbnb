@@ -1,0 +1,21 @@
+h1, p {
+    color: #ffffff;
+}
+#item-name {
+    padding: 3rem 0;
+}
+#main-image {
+    height: 27rem;
+    width: 34rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+}
+#content-body {
+    display: flex;
+}
+
+#item-description, #cost-day, #category, #contact {
+    padding: 1rem 0 0 3rem;
+    color: #ffffff;
+}
+

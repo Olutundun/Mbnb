@@ -21,6 +21,7 @@ class UserDashboard extends Component {
     cost: "",
     category: "",
     images: "",
+    contact: "",
     imageUpload: "",
     shown: false,
     successfulUpload: false,
@@ -33,13 +34,13 @@ class UserDashboard extends Component {
     const p = new RegExp(a.split('').join('|'), 'g')
 
     return string.toString().toLowerCase()
-      .replace(/\s+/g, '-') // Replace spaces with -
+      .replace(/\s+/g, '-') // Replace spaces with 
       .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
       .replace(/&/g, '-and-') // Replace & with 'and'
-      .replace(/[^\w\-]+/g, '') // Remove all non-word characters
-      .replace(/\-\-+/g, '-') // Replace multiple - with single -
-      .replace(/^-+/, '') // Trim - from start of text
-      .replace(/-+$/, '') // Trim - from end of text
+      .replace(/[^\w\-]+/g, '') // Remove all non word characters
+      .replace(/\-\-+/g, '-') // Replace multiple with single 
+      .replace(/^-+/, '') // Trim  from start of text
+      .replace(/-+$/, '') // Trim  from end of text
   }
 
   toggle() {
@@ -92,6 +93,7 @@ class UserDashboard extends Component {
       category: this.state.category,
       UserId: this.props.userid,
       images: this.state.images,
+      contact: this.state.contact,
       slug: slugData
     }
     console.log(formData);
@@ -187,11 +189,14 @@ class UserDashboard extends Component {
                 <label htmlFor="cost">Rent per day</label>
                 <input name="cost" value={this.state.cost} onChange={this.handleInputChange} type="description" className="form-control" id="exampleInputDescription" placeholder="Rent per day"></input>
 
+                <label htmlFor="contact">Contact email for Renters</label>
+                <input name="contact" value={this.state.contact} onChange={this.handleInputChange} type="description" className="form-control" id="exampleInputDescription" placeholder="Contact Email"></input>
+
                 <label htmlFor="category">Category select</label>
                 <select name="category" value={this.state.category} onChange={this.handleInputChange} className="form-control" id="exampleFormControlSelect1">
                   <option >Select Category</option>
                   <option value="Guitar">Guitar/Base</option>
-                  <option value="Drums">Drum sets</option>
+                  <option value="Dj Equipment">Dj Equipment</option>
                   <option value="Amplifiers">Amplifiers</option>
                   <option value="Percussion">Percussion</option>
                   <option value="Keyboards">Keyboards</option>
