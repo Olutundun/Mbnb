@@ -55,7 +55,7 @@ class Home extends Component {
 
                         <div className="img-icon text-center">
                         <a href="./guitar"><img id="image-1" src="/images/guitar.jpg" alt="category"></img></a>
-                        <h6 className="m-2">Guitars</h6>
+                        <h6 className="m-2">Guitar/Bass</h6>
                         </div>
 
                     </div>
