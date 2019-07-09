@@ -9,6 +9,7 @@ class Signin extends Component {
         this.state = {
             username: "",
             password: "",
+            errorMsg: "",
             redirectTo: null
         }
         this.handleFormSubmit = this.handleFormSubmit.bind(this)
@@ -26,25 +27,9 @@ class Signin extends Component {
             password: this.state.password
         }
         console.log(userData);
-        // this.props.Signin(this.state.username, this.state.password)
-        // this.setState({
-        //     redirectTo: '/UserDashboard'
-        // })
-        //console.log(userData.username);
-        // if (!userData.username || !userData.email || !userData.password) {
-        //     return;
-        // }
-        // axios.get("api/users", userData)
-        //     .then(function (response) {
-        //         //that.changePage();
-        //         console.log(response)
-        //     }).catch(function (err) {
-        //         console.log(err)
-        //     })
         axios.post("/api/signin",
             userData
         ).then(response => {
-            console.log('signin response: ')
             console.log(response)
             const userid = response.data.id;
             const username = response.data.username;
