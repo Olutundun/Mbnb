@@ -5,12 +5,12 @@ The easy way to find the equipment that you need for any gig especially when you
 
 
 # Technologies used
-A React.js application using components to build the UI, manage component state, and respond to user events.
-Mysql database, 
-sequalize,
-passport was used for the login,
-axios,
-express.
+* A React.js application using components to build the UI, manage component state, and respond to user events.
+* Mysql database 
+* sequalize
+* passport was used for the login
+* axios
+* express
 
 
 
