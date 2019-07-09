@@ -103,7 +103,7 @@ class UserDashboard extends Component {
       .then(function (response) {
         console.log(response)
         //reload
-        window.location.href =  window.location.hostname + "/UserDashboard";
+        window.location.href = "/UserDashboard"
       }).catch(function (err) {
         console.log(err)
         fetch('/api/items')
