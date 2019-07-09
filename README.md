@@ -11,6 +11,7 @@ The easy way to find the equipment that you need for any gig especially when you
 * passport was used for the login
 * axios
 * express
+* Deployed to heroku
 
 
 
