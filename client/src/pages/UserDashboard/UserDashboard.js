@@ -103,7 +103,6 @@ class UserDashboard extends Component {
       .then(function (response) {
         console.log(response)
         //reload
-        window.history.back();
       }).catch(function (err) {
         console.log(err)
         fetch('/api/items')
