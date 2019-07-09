@@ -7,7 +7,7 @@ class UserDashboard extends Component {
   // handlePageLoad = () => {
   constructor(props) {
     super(props);
-    fetch(`http://localhost:3001/api/items/${this.props.userid}`)
+    fetch(`/api/items/${this.props.userid}`)
       .then(response => response.json())
       .then(posts => (this.setState({ posts }))
       )
@@ -222,7 +222,7 @@ class UserDashboard extends Component {
                 <br></br>
 
                 <button className="btn btn-success" onClick={this.handleImgurUpload}>Upload Image</button>
-                {/* {this.state.successfulUpload && <p>hey we did it</p>} */}
+                {/* {this.state.successfulUpload && <p>hey we did it</p>} */} 
                 <br></br>
                 <br></br>
                 <div className="text-center">
