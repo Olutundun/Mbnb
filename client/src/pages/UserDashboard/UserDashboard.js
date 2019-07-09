@@ -80,7 +80,7 @@ class UserDashboard extends Component {
   }
 
   handleFormSubmit = (e) => {
-    // e.preventDefault();
+     e.preventDefault();
 
     console.log("submitted!")
 
