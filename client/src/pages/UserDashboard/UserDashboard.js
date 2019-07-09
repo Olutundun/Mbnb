@@ -104,7 +104,7 @@ class UserDashboard extends Component {
         console.log(response)
       }).catch(function (err) {
         console.log(err)
-        fetch('http://localhost:3001/api/items')
+        fetch('/api/items')
           .then(response => response.json())
           .then(posts => (this.setState({ posts }))
           )
