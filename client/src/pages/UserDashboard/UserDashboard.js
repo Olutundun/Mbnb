@@ -102,6 +102,8 @@ class UserDashboard extends Component {
     axios.post("api/items", formData)
       .then(function (response) {
         console.log(response)
+        //reload
+        window.location.reload();
       }).catch(function (err) {
         console.log(err)
         fetch('/api/items')
