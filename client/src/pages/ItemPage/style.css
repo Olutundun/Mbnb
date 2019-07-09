@@ -1,5 +1,6 @@
 #item-name {
     color: #ffffff;
+    border-bottom: 8px solid #ffffff;
 }
 #item-name {
     padding: 3rem 0;
@@ -12,10 +13,17 @@
 }
 #content-body {
     display: flex;
+    padding-top: 2rem;
 }
-
+#text-body {
+    
+    margin-left: 3rem;
+    padding-right: 2rem;
+    
+}
 #item-description, #cost-day, #category, #contact {
-    padding: 1rem 0 0 3rem;
+    padding: 1rem 0;
     color: #ffffff;
+    border-bottom: 1px solid #ffffff;
 }
 

@@ -48,6 +48,17 @@ router
             res.json(item);
         })
     });
+router
+    .route("/api/items/:id")
+    .delete((req, res) => {
+        db.Item.destroy({
+            where: {
+                id: req.params.id
+            }
+        }).then(function (item) {
+            res.json(item);
+        });
+    });
 
 
 module.exports = router;

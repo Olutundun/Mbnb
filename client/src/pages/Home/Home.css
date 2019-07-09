@@ -3,8 +3,7 @@
     justify-content: space-around;
     flex-wrap: wrap;
     background-color: #ffffff;
-    height: 16.66rem;
-    margin-bottom: 1rem;
+   
 }
 .react-container {
     background-color: #ffffff;
@@ -25,7 +24,7 @@ font-size: 80px;
     color: #ffffff;
     background-color: #000000;
     margin: 0;
-    padding: 2rem;
+    padding-top: 3rem;
     border-bottom: 8px solid #ffffff;
    
 }
@@ -79,6 +78,3 @@ h6 {
     color: whitesmoke;
 }
 
-html {
-    background-color: #ffffff;
-}

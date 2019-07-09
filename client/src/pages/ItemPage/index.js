@@ -20,9 +20,9 @@ class ItemPage extends Component{
             <div>
                 <h1 id="item-name">{itemName}</h1>
                 <div className="container"id="content-body">
-                    <img className="image-responsive"id="main-image"src={images}></img>
+                    <img className="img-fluid.max-width:100 height:auto"id="main-image"src={images}></img>
                     <div id="text-body">
-                        <h4 id="item-description">Desription: <br></br>{itemDescription}</h4>
+                        <h4 id="item-description">Description: <br></br>{itemDescription}</h4>
                         <h4 id="cost-day">Cost Per day: ${cost}</h4>
                         <h4 id="category">Category: {category}</h4>
                         <h4 id="contact">Contact renter at: {contact}</h4>
