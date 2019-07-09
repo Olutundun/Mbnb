@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./Amplifiers.css";
 import { Link } from "react-router-dom";
 
-
 class Amplifiers extends Component {
     constructor(props) {
         super(props);

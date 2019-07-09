@@ -93,7 +93,6 @@ class Signin extends Component {
                             <div className="text-center">
                                 <p>New to Mbnb? <Link to="/Signup" className="signUp">Sign Up here!</Link></p>
                             </div>
-
                         </form>
                     </div>
                 </div>

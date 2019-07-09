@@ -2,17 +2,16 @@ import React, { Component } from "react";
 import "./UserDashboard.css";
 import axios from "axios";
 
-
 class UserDashboard extends Component {
-  
+
   // handlePageLoad = () => {
-    constructor(props) {
-      super(props);
-      fetch(`http://localhost:3001/api/items/${this.props.userid}`)
-        .then(response => response.json())
-        .then(posts => (this.setState({posts}))
-        )
-    }
+  constructor(props) {
+    super(props);
+    fetch(`http://localhost:3001/api/items/${this.props.userid}`)
+      .then(response => response.json())
+      .then(posts => (this.setState({ posts }))
+      )
+  }
   // }
   state = {
     posts: [],
@@ -110,7 +109,6 @@ class UserDashboard extends Component {
           .then(posts => (this.setState({ posts }))
           )
       })
-
   }
 
   handleInputChange = event => {
@@ -122,21 +120,18 @@ class UserDashboard extends Component {
   };
 
   handleDelete = (id) => {
-    
     console.log(id);
     axios.delete("api/items/" + id)
-    .then(function (response) {
-      console.log(response)
-      window.location.reload();
-    })
+      .then(function (response) {
+        console.log(response)
+        window.location.reload();
+      })
   }
-
 
   render() {
     var shown = {
       display: this.state.shown ? "block" : "none"
     };
-
     var hidden = {
       display: this.state.shown ? "none" : "block"
     }
@@ -146,31 +141,30 @@ class UserDashboard extends Component {
         <h2>Your Posted Items:</h2>
         <table className="table table-dark table-striped table-bordered  p-2">
           {/* <table className="table table-dark table-striped table-bordered " > */}
-
-            <thead>
-              <tr>
-                {/* <th>Id</th> */}
-                <th>Item</th>
-                <th>Image</th>
-                <th>Cost per day</th>
-                <th>Description</th>
-                <th>Category</th>
-                <th>Delete item</th>
+          <thead>
+            <tr>
+              {/* <th>Id</th> */}
+              <th>Item</th>
+              <th>Image</th>
+              <th>Cost per day</th>
+              <th>Description</th>
+              <th>Category</th>
+              <th>Delete item</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.state.posts.map(post =>
+              <tr key={post.id}>
+                {/* <td>{post.id}</td> */}
+                <td>{post.itemName}</td>
+                <td ><img src={post.images} id="table-image" alt="music equipment"></img></td>
+                <td>{post.cost}</td>
+                <td>{post.itemDescription}</td>
+                <td>{post.category}</td>
+                <td><button className="btn btn-danger" onClick={() => this.handleDelete(post.id)}>delete</button></td>
               </tr>
-            </thead>
-            <tbody>
-              {this.state.posts.map(post =>
-                <tr key={post.id}>
-                  {/* <td>{post.id}</td> */}
-                  <td>{post.itemName}</td>
-                  <td ><img src={post.images} id="table-image" alt="music equipment"></img></td>
-                  <td>{post.cost}</td>
-                  <td>{post.itemDescription}</td>
-                  <td>{post.category}</td>
-                  <td><button className="btn btn-danger"  onClick={() => this.handleDelete(post.id)}>delete</button></td>
-                </tr>
-              )}
-            </tbody>
+            )}
+          </tbody>
           {/* </table> */}
         </table>
         <br></br>
@@ -181,12 +175,9 @@ class UserDashboard extends Component {
             <h4>Got music equipments to rent? Post it by clicking button below!</h4>
             <h4>Happy renting!</h4>
           </div>
-
           <div className="text-center">
             <button className="btn btn-dark mb-2 btn-lg" onClick={this.toggle.bind(this)}>Post New Rental</button>
           </div>
-
-
           <div className="container p-3 postForm" style={shown}>
             <div className="text-center">
               <h4>Please fill out some information regarding item you are trying to rent.</h4>
@@ -215,7 +206,6 @@ class UserDashboard extends Component {
                   <option value="Keyboards">Keyboards</option>
                   <option value="Other">Other</option>
                 </select>
-
                 <label htmlFor="itemDescription">Choose some pictures of item you are trying to rent</label>
                 <div className="custom-file col-md-8">
                   <input type="file" className="custom-file-input" id="imgur" accept="image/*" data-max-size="5000" onChange={(e) => this.handleImgur(e)}></input>
@@ -225,20 +215,14 @@ class UserDashboard extends Component {
                       <span class="sr-only">Loading...</span>
                     </div>
                   }
-
                   <label className="custom-file-label" htmlFor="customFile">{this.state.imageUpload ? this.state.imageUpload.name : 'Choose file'}</label>
-
                 </div>
-
-
                 <br></br>
                 <div>{this.state.successfulUpload && <p>Image Uploaded Successfully</p>}</div>
                 <br></br>
 
                 <button className="btn btn-success" onClick={this.handleImgurUpload}>Upload Image</button>
                 {/* {this.state.successfulUpload && <p>hey we did it</p>} */}
-
-
                 <br></br>
                 <br></br>
                 <div className="text-center">

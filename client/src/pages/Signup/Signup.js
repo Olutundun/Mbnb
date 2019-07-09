@@ -51,52 +51,51 @@ class Signup extends Component {
         this.state.password === this.state.password2
     );
 
-
     handleFormSubmit = (event) => {
         event.preventDefault();
-        if(this.validateForm()) {
-          axios.post("/api/signup", {
-            email: this.state.email,
-            username: this.state.username,
-            password: this.state.password
-          }).then((res) => {
-            console.log(res);
-            if(!res.data.error) {
-              axios.post("/api/signin", {
+        if (this.validateForm()) {
+            axios.post("/api/signup", {
+                email: this.state.email,
                 username: this.state.username,
                 password: this.state.password
-              })
-              .then((res) => {
-                if(res.status === 200) {
-                  console.log(res);
-                  this.props.updateUser({
-                    loggedIn: true,
-                    username: res.data.username,
-                    userid: res.data.id
-                  });
-                  sessionStorage.setItem("user", JSON.stringify(res.data.username));
-                  sessionStorage.setItem("userid", JSON.stringify(res.data.id));
-                  this.setState({
-                    redirectTo: "/UserDashboard"
-                  });
+            }).then((res) => {
+                console.log(res);
+                if (!res.data.error) {
+                    axios.post("/api/signin", {
+                        username: this.state.username,
+                        password: this.state.password
+                    })
+                        .then((res) => {
+                            if (res.status === 200) {
+                                console.log(res);
+                                this.props.updateUser({
+                                    loggedIn: true,
+                                    username: res.data.username,
+                                    userid: res.data.id
+                                });
+                                sessionStorage.setItem("user", JSON.stringify(res.data.username));
+                                sessionStorage.setItem("userid", JSON.stringify(res.data.id));
+                                this.setState({
+                                    redirectTo: "/UserDashboard"
+                                });
+                            }
+                        }).catch((err) => {
+                            console.log("Server Login Error");
+                            console.log(err);
+                        });
                 }
-              }).catch((err) => {
-                console.log("Server Login Error");
+                else {
+                    console.log("Sign-up error");
+                    this.setState({
+                        errorMsg: res.data.error
+                    });
+                }
+            }).catch((err) => {
+                console.log("Sign up server error");
                 console.log(err);
-              });
-            }
-            else {
-              console.log("Sign-up error");
-              this.setState({
-                errorMsg: res.data.error
-              });
-            }
-          }).catch((err) => {
-            console.log("Sign up server error");
-            console.log(err);
-          });
+            });
         }
-      }
+    }
 
     handleInputChange = event => {
         let { name, value } = event.target;
@@ -146,7 +145,6 @@ class Signup extends Component {
                                     <small className="form-text text-success">Passwords match!</small>
                                 ) : ""}
                             </div>
-
                             <div className="text-center p-3">
                                 <button onClick={this.handleFormSubmit} type="submit" className="btn btn-danger">Sign up!</button>
                             </div>
@@ -154,7 +152,6 @@ class Signup extends Component {
                             <div className="text-center">
                                 <p>Already have an account?<Link to="/Signin" className="sign-up"> Login here!</Link></p>
                             </div>
-
                         </form>
                     </div>
                 </div>
