@@ -26,7 +26,8 @@ class UserDashboard extends Component {
     shown: false,
     successfulUpload: false,
     slug: "",
-    spinner: false
+    spinner: false,
+    id: ""
   }
   slugify = (string) => {
     const a = 'àáäâãåăæąçćčđèéėëêęǵḧìíïîįłḿǹńňñòóöôœøṕŕřßśšșťțùúüûǘůűūųẃẍÿýźžż·/_,:;'
@@ -120,6 +121,15 @@ class UserDashboard extends Component {
     //console.log("value is " + value);
   };
 
+  handleDelete = () => {
+    let id = this.state.id
+    console.log(id);
+    // axios.delete("api/items/" + id)
+    // .then(function (response) {
+    //   console.log(response)
+    // })
+  }
+
 
   render() {
     var shown = {
@@ -133,8 +143,8 @@ class UserDashboard extends Component {
     return (
       <div className="container mainContainer p-5">
         <h2>Your Posted Items:</h2>
-        <table className="table table-dark table-striped table-bordered table-hover p-2">
-          <table className="table table-dark table-striped table-bordered table-hover" >
+        <table className="table table-dark table-striped table-bordered  p-2">
+          <table className="table table-dark table-striped table-bordered " >
 
             <thead>
               <tr>
@@ -144,6 +154,7 @@ class UserDashboard extends Component {
                 <th>Cost per day</th>
                 <th>Description</th>
                 <th>Category</th>
+                <th>Delete item</th>
               </tr>
             </thead>
             <tbody>
@@ -155,6 +166,7 @@ class UserDashboard extends Component {
                   <td>{post.cost}</td>
                   <td>{post.itemDescription}</td>
                   <td>{post.category}</td>
+                  <td><button className="btn btn-danger" value={this.setState.id} onClick={this.handleDelete}>delete</button></td>
                 </tr>
               )}
             </tbody>
