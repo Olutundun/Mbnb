@@ -1,21 +1,21 @@
 import React, { Component } from "react";
 import "./style.css"
 
-class ItemPage extends Component{
+class ItemPage extends Component {
     constructor(props) {
         super(props);
         fetch(`http://localhost:3001/api/item/${this.props.match.params.slug}`)
             .then(response => response.json())
-            .then(posts => (this.setState({posts}))
-            ) 
+            .then(posts => (this.setState({ posts }))
+            )
     }
     state = {
         posts: [],
     }
-    render(){
+    render() {
         console.log(this.props.match.params.slug)
         console.log(this.state.posts);
-        const {category, cost, images, itemDescription, itemName, contact } = this.state.posts;
+        const { category, cost, images, itemDescription, itemName, contact } = this.state.posts;
         return (
             <div>
                 <h1 id="item-name">{itemName}</h1>
@@ -29,9 +29,9 @@ class ItemPage extends Component{
                     </div>
                 </div>
             </div>
-         )
+        )
     }
 
- }
+}
 
 export default ItemPage;
