@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 class Home extends Component {
     constructor(props) {
         super(props);
-        fetch('http://localhost:3001/api/items')
+        fetch('/api/items')
             .then(response => response.json())
             .then(posts => (this.setState({ posts }))
             )

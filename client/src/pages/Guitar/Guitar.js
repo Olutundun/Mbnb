@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 class Guitar extends Component {
     constructor(props) {
         super(props);
-        fetch('http://localhost:3001/api/category/Guitar')
+        fetch('/api/category/Guitar')
             .then(response => response.json())
             .then(posts => (this.setState({ posts }))
             )
