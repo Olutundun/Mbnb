@@ -6,7 +6,6 @@ const app = express();
 const routes = require("./routes");
 const passport = require("passport");
 
-
 const PORT = process.env.PORT || 3001;
 
 // Configure body parsing for AJAX requests
@@ -36,7 +35,6 @@ var syncOptions = {
 app.use(cors());
 // Add routes, both API and view
 app.use(routes);
-
 
 // Starting the API server, syncing our models 
 db.sequelize.sync(syncOptions).then(function () {

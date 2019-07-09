@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./DjEquipment.css";
 import { Link } from "react-router-dom";
 
-
 class Drums extends Component {
     constructor(props) {
         super(props);

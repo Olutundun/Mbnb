@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./Keyboards.css";
 import { Link } from "react-router-dom";
 
-
 class Keyboards extends Component {
     constructor(props) {
         super(props);

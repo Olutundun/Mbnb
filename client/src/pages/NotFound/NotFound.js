@@ -1,10 +1,10 @@
 import React from "react";
 
 function NotFound() {
-    return(
+    return (
         <div>
             <p>404 error</p>
-            <br/>
+            <br />
             <p>Sorry! requested page is not available!</p>
         </div>
     );

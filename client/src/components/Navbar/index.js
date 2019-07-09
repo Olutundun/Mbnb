@@ -58,7 +58,7 @@ class Navbar extends Component {
                                 <li className="nav-item">
                                     <button className="btn btn-primary" id="logout-link" onClick={this.signout}>Sign Out</button>
                                 </li>
-                                
+
                             </React.Fragment>
                         ) : (
                                 <React.Fragment>
