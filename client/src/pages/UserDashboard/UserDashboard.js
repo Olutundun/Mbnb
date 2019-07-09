@@ -4,16 +4,16 @@ import axios from "axios";
 
 
 class UserDashboard extends Component {
-  constructor(props) {
-    super(props);
-    fetch(`http://localhost:3001/api/items/${this.props.userid}`)
-      .then(response => response.json())
-      .then(posts => (this.setState({
-        posts
-      }))
-      )
-  }
-
+  
+  // handlePageLoad = () => {
+    constructor(props) {
+      super(props);
+      fetch(`http://localhost:3001/api/items/${this.props.userid}`)
+        .then(response => response.json())
+        .then(posts => (this.setState({posts}))
+        )
+    }
+  // }
   state = {
     posts: [],
     itemName: "",
@@ -121,13 +121,14 @@ class UserDashboard extends Component {
     //console.log("value is " + value);
   };
 
-  handleDelete = () => {
-    let id = this.state.id
+  handleDelete = (id) => {
+    
     console.log(id);
-    // axios.delete("api/items/" + id)
-    // .then(function (response) {
-    //   console.log(response)
-    // })
+    axios.delete("api/items/" + id)
+    .then(function (response) {
+      console.log(response)
+      window.location.reload();
+    })
   }
 
 
@@ -144,7 +145,7 @@ class UserDashboard extends Component {
       <div className="container mainContainer p-5">
         <h2>Your Posted Items:</h2>
         <table className="table table-dark table-striped table-bordered  p-2">
-          <table className="table table-dark table-striped table-bordered " >
+          {/* <table className="table table-dark table-striped table-bordered " > */}
 
             <thead>
               <tr>
@@ -166,11 +167,11 @@ class UserDashboard extends Component {
                   <td>{post.cost}</td>
                   <td>{post.itemDescription}</td>
                   <td>{post.category}</td>
-                  <td><button className="btn btn-danger" value={this.setState.id} onClick={this.handleDelete}>delete</button></td>
+                  <td><button className="btn btn-danger"  onClick={() => this.handleDelete(post.id)}>delete</button></td>
                 </tr>
               )}
             </tbody>
-          </table>
+          {/* </table> */}
         </table>
         <br></br>
 
@@ -208,7 +209,7 @@ class UserDashboard extends Component {
                 <select name="category" value={this.state.category} onChange={this.handleInputChange} className="form-control" id="exampleFormControlSelect1">
                   <option >Select Category</option>
                   <option value="Guitar">Guitar/Bass</option>
-                  <option value="Dj Equipment">Dj Equipment</option>
+                  <option value="DjEquipment">Dj Equipment</option>
                   <option value="Amplifiers">Amplifiers</option>
                   <option value="Percussion">Percussion</option>
                   <option value="Keyboards">Keyboards</option>
