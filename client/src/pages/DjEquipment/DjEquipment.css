@@ -17,10 +17,10 @@
     font-size: 100px;
 }
 #dj-main-background{
-    background-image: url("/images/crowdshot.jpg");
+    /* background-image: url("/images/crowdshot.jpg"); */
     background-position: center; 
     background-repeat: no-repeat;
-    background-color: #000000;
+    /* background-color: #000000; */
     background-size: cover;
     /* border-top: 25px solid #000000; */
     /* opacity: 0.6; */

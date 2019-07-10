@@ -1,0 +1,14 @@
+#jumbokey-img {
+    background-image: url(/images/keyboardcollect.jpg);
+    background-position: center;
+    /* background-size: fill; */
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: black;
+    margin-top: 30px;
+    height: 25rem;
+}
+
+#text {
+    font-size: 100px;
+}

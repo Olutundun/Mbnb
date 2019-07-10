@@ -22,9 +22,9 @@ class Keyboards extends Component {
     render() {
         return (
             <div>
-                <div className="jumbotron jumbotron-fluid banner">
+                <div className="jumbotron jumbotron-fluid banner" id="jumbokey-img">
                     <div className="container">
-                        <h1 className="display-4">Keyboards</h1>
+                        <h1 className="display-4 text" id="text">Keyboards</h1>
                     </div>
                 </div>
                 <div className="equipment-div">

@@ -22,9 +22,9 @@ class Guitar extends Component {
     render() {
         return (
             <div>
-                <div className="jumbotron jumbotron-fluid banner">
+                <div className="jumbotron jumbotron-fluid banner" id="jumbo-guitar">
                     <div className="container">
-                        <h1 className="display-4">Guitars</h1>
+                        <h1 className="display-4" id="text">Guitars/Basses</h1>
                     </div>
                 </div>
                 <div className="equipment-div">

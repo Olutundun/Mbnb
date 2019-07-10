@@ -22,9 +22,9 @@ class Percussion extends Component {
     render() {
         return (
             <div>
-                <div className="jumbotron jumbotron-fluid banner">
+                <div className="jumbotron jumbotron-fluid banner" id="jumbop-img">
                     <div className="container">
-                        <h1 className="display-4">Percussion</h1>
+                        <h1 className="display-4" id="text">Percussion</h1>
                     </div>
                 </div>
                 <div className="equipment-div">

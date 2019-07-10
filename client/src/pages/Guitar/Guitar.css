@@ -1,0 +1,11 @@
+#jumbo-guitar {
+    background-image: url("/images/guitarwall.jpg");
+    background-position: center;
+    /* background-size: fill; */
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: black;
+    margin-top: 30px;
+    height: 25rem;
+} 
+
