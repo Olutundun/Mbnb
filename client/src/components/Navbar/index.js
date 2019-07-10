@@ -48,12 +48,14 @@ class Navbar extends Component {
                     <ul className="navbar-nav d-flex flex-row ">
                         {loggedIn ? (
                             <React.Fragment>
+                             
                                 <li id="nap-icon"className="nav-item">
                                     <i className="fab fa-napster"></i>
                                 </li>
                                 <li>
-                                    <h3 id="logged-in-user" className="navbar-text m-1">Hello {this.props.username}!</h3>
+                                    <h3 id="logged-in-user" className="navbar-text">Hello {this.props.username}!</h3>
                                 </li>
+                               
                                 <li className="nav-item">
                                     <Link to="/UserDashboard"><button className="btn btn-success">Dashboard</button></Link>
                                 </li>
