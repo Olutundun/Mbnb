@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import "./UserDashboard.css";
 import axios from "axios";
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
+import "./UserDashboard.css";
 
 class UserDashboard extends Component {
 
-  
   constructor(props) {
     super(props);
     fetch(`http://localhost:3001/api/items/${this.props.userid}`)
@@ -12,6 +13,23 @@ class UserDashboard extends Component {
       .then(posts => (this.setState({ posts }))
       )
   }
+// pop up
+  submit = (id) => {
+    console.log(id);
+    confirmAlert({
+      title: 'Delete Item?',
+      message: 'Are you sure you want to delete.',
+      buttons: [
+        {
+          label: 'Yes',
+          onClick: () => this.handleDelete(id)
+        },
+        {
+          label: 'No',
+        }
+      ]
+    })
+  };
 
   state = {
     posts: [],
@@ -137,7 +155,9 @@ class UserDashboard extends Component {
       display: this.state.shown ? "none" : "block"
     }
 
+    
     return (
+      
       <div className="container mainContainer p-5">
         <h2>Your Posted Items:</h2>
         <div id="card">
@@ -160,7 +180,7 @@ class UserDashboard extends Component {
                 <td data-label="cost">{post.cost}</td>
                 <td data-label="description">{post.itemDescription}</td>
                 <td data-label="category">{post.category}</td>
-                <td data-label="delete"><button className="btn btn-danger" onClick={() => this.handleDelete(post.id)}>delete</button></td>
+                <td data-label="delete"><button className="btn btn-danger" onClick={() => this.submit(post.id)}>delete</button></td>
               </tr>
             )}
           </tbody>
@@ -236,6 +256,7 @@ class UserDashboard extends Component {
       </div>
 
     )
+  
   }
 }
 
