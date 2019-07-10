@@ -24,7 +24,7 @@ class Guitar extends Component {
             <div>
                 <div className="jumbotron jumbotron-fluid banner" id="jumbo-guitar">
                     <div className="container">
-                        <h1 className="display-4" id="text">Guitars/Basses</h1>
+                        <h1 className="display-4" id="bass-text">Guitars/Basses</h1>
                     </div>
                 </div>
                 <div className="equipment-div">

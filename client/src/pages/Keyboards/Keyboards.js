@@ -24,7 +24,7 @@ class Keyboards extends Component {
             <div>
                 <div className="jumbotron jumbotron-fluid banner" id="jumbokey-img">
                     <div className="container">
-                        <h1 className="display-4 text" id="text">Keyboards</h1>
+                        <h1 className="display-4 text" id="keyboard-text">Keyboards</h1>
                     </div>
                 </div>
                 <div className="equipment-div">

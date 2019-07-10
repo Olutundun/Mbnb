@@ -24,7 +24,7 @@ class Percussion extends Component {
             <div>
                 <div className="jumbotron jumbotron-fluid banner" id="jumbop-img">
                     <div className="container">
-                        <h1 className="display-4" id="text">Percussion</h1>
+                        <h1 className="display-4" id="percussion-text">Percussion</h1>
                     </div>
                 </div>
                 <div className="equipment-div">

@@ -9,7 +9,8 @@
     height: 25rem;
 }
 
-#text {
-    font-size: 100px;
-    text-shadow: 6px 6px 6px #000000;
+#keyboard-text {
+    color: #ffffff;
+    font-size: 6rem;
+    text-shadow: 3px 3px 3px #000000;
 }

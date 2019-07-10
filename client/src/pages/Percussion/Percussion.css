@@ -1,5 +1,5 @@
 #jumbop-img {
-    background-image: url(/images/percus.jpg);
+    background-image: url("/images/percus.jpg");
     background-position: center;
     /* background-size: fill; */
     background-repeat: no-repeat;
@@ -10,7 +10,8 @@
 
 }
 
-h1 {
+#percussion-text{
+    font-size: 6rem;
     color: white;
     text-shadow: 2px 2px 4px #000000;
 }
