@@ -19,13 +19,14 @@ body {
 
   #compName {
    font-family: "musicFont";
-   font-size: 7rem;
+   font-size: 7.5rem;
    letter-spacing: 15px;
    color: #FFFFFF;
   }
 
   #compTitle {
     font-family: 'Merienda', cursive;
+    font-size: 30px;
   }
 
 * {
