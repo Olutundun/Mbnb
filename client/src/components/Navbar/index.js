@@ -44,19 +44,21 @@ class Navbar extends Component {
         return (
             <div>
                 <nav className="navbar nav bg-light nav-pills">
-                    <Link to="/"><img src="./images/logo.png" alt="logo"></img></Link>
+                    <Link to="/"><img id="logo-small"src="./images/logo.png" alt="logo"></img></Link>
                     <ul className="navbar-nav d-flex flex-row ">
                         {loggedIn ? (
                             <React.Fragment>
-                                <li className="nav-item">
+                                <li id="nap-icon"className="nav-item">
                                     <i className="fab fa-napster"></i>
-                                    <h3 className="navbar-text m-1">Hello {this.props.username}!</h3>
+                                </li>
+                                <li>
+                                    <h3 id="logged-in-user" className="navbar-text m-1">Hello {this.props.username}!</h3>
                                 </li>
                                 <li className="nav-item">
                                     <Link to="/UserDashboard"><button className="btn btn-success">Dashboard</button></Link>
                                 </li>
                                 <li className="nav-item">
-                                    <button className="btn btn-primary" id="logout-link" onClick={this.signout}>Sign Out</button>
+                                    <button className="btn btn-primary" id="logout-link" onClick={this.signout}>SignOut</button>
                                 </li>
 
                             </React.Fragment>

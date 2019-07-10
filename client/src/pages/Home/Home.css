@@ -76,3 +76,8 @@ h6 {
     color: whitesmoke;
 }
 
+@media (max-height: 600px) {
+    #category-div {
+        padding-left: 7.5rem;
+    }
+}
