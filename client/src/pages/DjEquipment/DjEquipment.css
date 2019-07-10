@@ -1,0 +1,27 @@
+
+
+#jumbo-img-dj {
+    background-image: url("/images/dj-background.png");
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-color: #000000;
+    background-size: cover;
+    margin: 0;
+    height: 25rem;
+    margin: 2rem 0;
+}
+
+#dj-name{
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 100px;
+}
+#dj-main-background{
+    background-image: url("/images/crowdshot.jpg");
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-color: #000000;
+    background-size: cover;
+    /* border-top: 25px solid #000000; */
+    /* opacity: 0.6; */
+}

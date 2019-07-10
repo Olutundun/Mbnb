@@ -4,7 +4,7 @@ import axios from "axios";
 
 class UserDashboard extends Component {
 
-  // handlePageLoad = () => {
+  
   constructor(props) {
     super(props);
     fetch(`http://localhost:3001/api/items/${this.props.userid}`)
@@ -12,7 +12,7 @@ class UserDashboard extends Component {
       .then(posts => (this.setState({ posts }))
       )
   }
-  // }
+
   state = {
     posts: [],
     itemName: "",
@@ -26,7 +26,8 @@ class UserDashboard extends Component {
     successfulUpload: false,
     slug: "",
     spinner: false,
-    id: ""
+    id: "",
+    new_rental: []
   }
   slugify = (string) => {
     const a = 'àáäâãåăæąçćčđèéėëêęǵḧìíïîįłḿǹńňñòóöôœøṕŕřßśšșťțùúüûǘůűūųẃẍÿýźžż·/_,:;'
@@ -164,6 +165,7 @@ class UserDashboard extends Component {
                 <td><button className="btn btn-danger" onClick={() => this.handleDelete(post.id)}>delete</button></td>
               </tr>
             )}
+            {/* if new_rentals not empty do nothing, if somethin diplsay */}
           </tbody>
           {/* </table> */}
         </table>

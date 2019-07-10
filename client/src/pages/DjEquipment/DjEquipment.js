@@ -22,12 +22,12 @@ class Drums extends Component {
     render() {
         return (
             <div>
-                <div className="jumbotron jumbotron-fluid banner">
+                <div className="jumbotron jumbotron-fluid banner" id="jumbo-img-dj">
                     <div className="container">
-                        <h1 className="display-4">Dj Equipment</h1>
+                        <h1 id="dj-name" className="display-4">Dj Equipment</h1>
                     </div>
                 </div>
-                <div className="equipment-div">
+                <div className="equipment-div" id="dj-main-background">
                     {this.state.posts.map((post, key) =>
                         <div className="Parent-div" key={key} >
                             <img id="image-top" src={post.images} alt="music equipment"></img>
