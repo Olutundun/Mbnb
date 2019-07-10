@@ -2,9 +2,20 @@ img {
     width: 50px;
 }
 li {
-    margin: 0 1rem; 
+    margin: 0 10px; 
 }
-
+#nap-icon {
+    margin: 0;
+}
 .nav-item button:hover {
    background-color: #970e75;
+}
+
+@media screen and (max-width: 600px) {
+    #logged-in-user {
+        font-size: 1rem;
+    }
+    #logo-small {
+        margin-bottom: 1rem;
+    }
 }

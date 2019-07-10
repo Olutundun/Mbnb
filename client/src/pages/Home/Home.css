@@ -55,9 +55,7 @@ hr {
     border: 4px solid white;
 }
 .Parent-div{
-/* border: 3px solid red; */
 width: 25rem;
-/* height: 100%; */
 margin: 2rem;
 overflow: hidden;
 background-color: #c0c0c0;
@@ -78,3 +76,8 @@ h6 {
     color: whitesmoke;
 }
 
+@media (max-height: 600px) {
+    #category-div {
+        padding-left: 7.5rem;
+    }
+}

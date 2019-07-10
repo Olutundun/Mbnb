@@ -1,0 +1,28 @@
+#jumbo-guitar {
+    background-image: url("/images/guitarwall.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-size: 100%; */
+    background-color: black;
+    margin-top: 30px;
+    height: 25rem;
+} 
+
+#bass-text {
+    font-size: 6rem;
+    -webkit-text-stroke: 1px#3b3a3a;
+    text-shadow: 2px 3px 0px #000000, 4px 4px 0px #000000;
+    position: relative;
+    top: 30px;
+    font-weight: 700;
+    color: #ffffff;
+    
+}
+@media screen and (max-width: 675px) {
+    #bass-text {
+        font-size: 4rem;
+        position: relative;
+        top: 110px;
+    }
+}

@@ -1,0 +1,17 @@
+#jumbop-img {
+    background-image: url("/images/percus.jpg");
+    background-position: center;
+    /* background-size: fill; */
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: black;
+    margin-top: 30px;
+    height: 25rem;
+
+}
+
+#percussion-text{
+    font-size: 6rem;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}

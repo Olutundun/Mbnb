@@ -1,0 +1,26 @@
+
+
+#jumbo-img-dj {
+    background-image: url("/images/dj-background.png");
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-color: #000000;
+    background-size: cover;
+    margin: 0;
+    height: 25rem;
+    margin: 2rem 0;
+}
+
+#dj-name{
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 6rem;
+    text-shadow: 2px 3px 0px #000000, 4px 4px 0px #000000;
+}
+@media screen and (max-width: 675px) {
+    #dj-name {
+        font-size: 4rem;
+        position: relative;
+        top: 50px;
+    }
+}
