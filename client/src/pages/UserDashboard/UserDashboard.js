@@ -140,11 +140,10 @@ class UserDashboard extends Component {
     return (
       <div className="container mainContainer p-5">
         <h2>Your Posted Items:</h2>
+        <div id="card">
         <table className="table table-dark table-striped table-bordered  p-2">
-          {/* <table className="table table-dark table-striped table-bordered " > */}
           <thead>
             <tr>
-              {/* <th>Id</th> */}
               <th>Item</th>
               <th>Image</th>
               <th>Cost per day</th>
@@ -156,19 +155,18 @@ class UserDashboard extends Component {
           <tbody>
             {this.state.posts.map(post =>
               <tr key={post.id}>
-                {/* <td>{post.id}</td> */}
-                <td>{post.itemName}</td>
-                <td ><img src={post.images} id="table-image" alt="music equipment"></img></td>
-                <td>{post.cost}</td>
-                <td>{post.itemDescription}</td>
-                <td>{post.category}</td>
-                <td><button className="btn btn-danger" onClick={() => this.handleDelete(post.id)}>delete</button></td>
+                <td data-label="item">{post.itemName}</td>
+                <td data-label="image"><img src={post.images} id="table-image" alt="music equipment"></img></td>
+                <td data-label="cost">{post.cost}</td>
+                <td data-label="description">{post.itemDescription}</td>
+                <td data-label="category">{post.category}</td>
+                <td data-label="delete"><button className="btn btn-danger" onClick={() => this.handleDelete(post.id)}>delete</button></td>
               </tr>
             )}
-            {/* if new_rentals not empty do nothing, if somethin diplsay */}
           </tbody>
-          {/* </table> */}
+         
         </table>
+        </div>
         <br></br>
 
         <div>
