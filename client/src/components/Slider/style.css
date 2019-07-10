@@ -215,7 +215,7 @@ button:hover {
   }    
 }
 
-@media (max-height: 600px) {
+@media (max-width: 600px) {
   .slider-content .inner h1 {
     font-size: 1rem;
   }    
@@ -224,8 +224,13 @@ button:hover {
     padding-top: 20px;
     margin-bottom: 0;
   }
-  #compDesc {
+  #compTitle {
     font-size: 1rem;
+    margin-bottom: 0;
+  }
+  #compDesc {
+    font-size: 12px;
+    margin-top: 9px;
   }
 }
 
