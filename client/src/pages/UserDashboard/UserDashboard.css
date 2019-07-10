@@ -22,6 +22,9 @@ h2 {
 #table-image{
     max-width:180px;
   }
+  .react-confirm-alert-overlay {
+    background: none;
+  }
 
   /* mobile responsive table */
   @media screen and (max-width: 600px) {
