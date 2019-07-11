@@ -1,15 +1,14 @@
+import axios from "axios";
 import React, { Component } from "react";
 import "./Amplifiers.css";
 import { Link } from "react-router-dom";
 
 class Amplifiers extends Component {
-    constructor(props) {
-        super(props);
-        fetch('/api/category/Amplifiers')
-            .then(response => response.json())
-            .then(posts => (this.setState({ posts }))
-            )
-    }
+
+componentDidMount() {
+    axios.get("/api/category/Amplifiers")
+      .then(res => this.setState({ posts: res.data}))  
+  }
     state = {
         posts: [],
         itemName: "",

@@ -1,17 +1,16 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
+import axios from "axios";
 import React, { Component } from "react";
 import "./Home.css";
 import Slide from "../../components/Slider";
 import { Link } from "react-router-dom";
 
 class Home extends Component {
-    constructor(props) {
-        super(props);
-        fetch('/api/items')
-            .then(response => response.json())
-            .then(posts => (this.setState({ posts }))
-            )
-    }
+   
+    componentDidMount() {
+        axios.get("/api/items")
+          .then(res => this.setState({ posts: res.data}))  
+      }
     state = {
         posts: [],
         itemName: "",
