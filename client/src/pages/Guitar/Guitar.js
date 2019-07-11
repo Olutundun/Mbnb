@@ -4,13 +4,7 @@ import "./Guitar.css";
 import { Link } from "react-router-dom";
 
 class Guitar extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     fetch('http://localhost:3001/api/category/Guitar')
-    //         .then(response => response.json())
-    //         .then(posts => (this.setState({ posts }))
-    //         )
-    // }
+    
     componentDidMount() {
         axios.get("/api/category/Guitar")
           .then(res => this.setState({ posts: res.data}))  

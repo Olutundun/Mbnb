@@ -6,13 +6,7 @@ import Slide from "../../components/Slider";
 import { Link } from "react-router-dom";
 
 class Home extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     fetch('http://localhost:3001/api/items')
-    //         .then(response => response.json())
-    //         .then(posts => (this.setState({ posts }))
-    //         )
-    // }
+   
     componentDidMount() {
         axios.get("/api/items")
           .then(res => this.setState({ posts: res.data}))  

@@ -4,13 +4,7 @@ import "./Keyboards.css";
 import { Link } from "react-router-dom";
 
 class Keyboards extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     fetch('http://localhost:3001/api/category/Keyboards')
-    //         .then(response => response.json())
-    //         .then(posts => (this.setState({ posts }))
-    //         )
-    // }
+   
     componentDidMount() {
         axios.get("/api/category/Keyboards")
           .then(res => this.setState({ posts: res.data}))  

@@ -4,13 +4,7 @@ import "./Amplifiers.css";
 import { Link } from "react-router-dom";
 
 class Amplifiers extends Component {
-//     constructor(props) {
-//         super(props);
-//         fetch('http://localhost:3001/api/category/Amplifiers')
-//             .then(response => response.json())
-//             .then(posts => (this.setState({ posts }))
-//             )
-//     }
+
 componentDidMount() {
     axios.get("/api/category/Amplifiers")
       .then(res => this.setState({ posts: res.data}))  

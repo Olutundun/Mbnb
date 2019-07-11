@@ -6,19 +6,8 @@ import "./UserDashboard.css";
 
 class UserDashboard extends Component {
 
-  // constructor(props) {
-  //   super(props);
-  //   fetch(`http://localhost:3001/api/items/${this.props.userid}`)
-  //     .then(response => response.json())
-  //     .then(posts => (this.setState({ posts }))
-  //     )
-  
-  // }
     componentDidMount() {
-      // axios.get(`/api/items/${this.props.userid}`)
-      //   .then(res => this.setState({ posts: res.data}))
       this.loadPage();
-        
     }
 
     loadPage = () => {
@@ -131,20 +120,10 @@ class UserDashboard extends Component {
     console.log(formData.UserId)
 
     axios.post("api/items", formData)
-      // .then(function (response) {
-      //   console.log(response)
-      // }).catch(function (err) {
-      //   console.log(err)
-        // fetch('http://localhost:3001/api/items')
-        //   .then(response => response.json())
-        //   .then(posts => (this.setState({ posts }))
-        //   )
-        // axios.get("/api/items/")
-      // .then(res => this.setState({ posts: res.data, shown:false}))
       .then(this.toggle())
       .then(this.formReset())
       .then(res => this.loadPage())
-  //     })
+
   }
 
   handleInputChange = event => {
@@ -158,8 +137,6 @@ class UserDashboard extends Component {
   handleDelete = (id) => {
     console.log(id);
     axios.delete("api/items/" + id)
-      // .then(function (response) {
-      //   console.log(response)
        .then(res => this.loadPage())
        .catch(err => console.log(err))
       
@@ -270,7 +247,7 @@ class UserDashboard extends Component {
                 <br></br>
 
                 <button className="btn btn-success" onClick={this.handleImgurUpload}>Upload Image</button>
-                {/* {this.state.successfulUpload && <p>hey we did it</p>} */}
+                {/* {this.state.successfulUpload && <p>hey we did it</p>} */} 
                 <br></br>
                 <br></br>
                 <div className="text-center">

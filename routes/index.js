@@ -9,9 +9,11 @@ router.use("/", itemRoutes);
 router.use("/", userRoutes);
 router.use("/", categoryRoutes);
 
-//if no API routes are hit, send the react app
-router.use(function(req, res) {
-    res.sendFile(path.join(__dirname, "../../client/public/index.html"));
-  });
+//if no API routes are hit, send the react router
+
+
+// router.use(function(req, res) {
+//     res.sendFile(path.join(__dirname, "../../client/public/index.html"));
+//   });
 
 module.exports = router;

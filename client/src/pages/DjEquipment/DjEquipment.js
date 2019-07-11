@@ -4,13 +4,7 @@ import "./DjEquipment.css";
 import { Link } from "react-router-dom";
 
 class Drums extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     fetch('http://localhost:3001/api/category/DjEquipment')
-    //         .then(response => response.json())
-    //         .then(posts => (this.setState({ posts }))
-    //         )
-    // }
+   
     componentDidMount() {
         axios.get("/api/category/DjEquipment")
           .then(res => this.setState({ posts: res.data}))  
