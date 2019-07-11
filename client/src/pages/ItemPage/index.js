@@ -1,14 +1,19 @@
+import axios from "axios";
 import React, { Component } from "react";
 import "./style.css"
 
 class ItemPage extends Component {
-    constructor(props) {
-        super(props);
-        fetch(`http://localhost:3001/api/item/${this.props.match.params.slug}`)
-            .then(response => response.json())
-            .then(posts => (this.setState({ posts }))
-            )
-    }
+    // constructor(props) {
+    //     super(props);
+    //     fetch(`http://localhost:3001/api/item/${this.props.match.params.slug}`)
+    //         .then(response => response.json())
+    //         .then(posts => (this.setState({ posts }))
+    //         )
+    // }
+    componentDidMount() {
+        axios.get(`/api/category/${this.props.match.params.slug}`)
+          .then(res => this.setState({ posts: res.data}))  
+      }
     state = {
         posts: [],
     }
