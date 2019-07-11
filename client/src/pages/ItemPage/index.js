@@ -5,7 +5,7 @@ import "./style.css"
 class ItemPage extends Component {
    
     componentDidMount() {
-        axios.get(`/api/category/${this.props.match.params.slug}`)
+        axios.get(`/api/item/${this.props.match.params.slug}`)
           .then(res => this.setState({ posts: res.data}))  
       }
     state = {

@@ -76,8 +76,36 @@ h6 {
     color: whitesmoke;
 }
 
-@media (max-height: 600px) {
+@media (max-width: 600px) {
     #category-div {
-        padding-left: 7rem;
+        align-items: center;
+        padding: 2rem 8rem;
+    }
+    #image-top{
+        width: 375px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 426px) {
+    #image-top{
+        width: 360px;
+    }
+}
+
+@media (max-width: 376px) {
+    #image-top{
+        width: 310px;
+    }
+    #category-div {
+        padding: 2rem 7rem;
+    }
+}
+@media (max-width: 376px) {
+    #image-top{
+        width: 260px;
+    }
+    #category-div {
+        padding: 2rem 6.5rem;
     }
 }
