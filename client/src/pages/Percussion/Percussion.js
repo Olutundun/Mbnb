@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 class Percussion extends Component {
    
     componentDidMount() {
-        axios.get("/api/category/$Percussion")
+        axios.get("/api/category/Percussion")
           .then(res => this.setState({ posts: res.data}))  
       }
     state = {
