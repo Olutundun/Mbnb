@@ -31,7 +31,7 @@ class Home extends Component {
                     <div id="category-div">
 
                         <div className="img-icon text-center">
-                            <a href="./Amplifiers"><img id="image-1" src="/images/amp.jpg" alt="category"></img></a>
+                            <a href="./Amplifiers"><img id="image-1" src="/images/amp2.jpg" alt="category"></img></a>
                             <h6 className="m-2">Amplifiers</h6>
                         </div>
                         <div className="img-icon text-center">
