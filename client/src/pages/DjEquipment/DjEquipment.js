@@ -32,7 +32,7 @@ class Drums extends Component {
                             <img id="image-top" src={post.images} alt="music equipment"></img>
                             <div id="data-div">
                                 <p>{post.itemName}</p>
-                                <p>Description: {post.itemDescription}</p>
+                                {/* <p>Description: {post.itemDescription}</p> */}
                                 <p>Category: {post.category}</p>
                                 <p>Cost: ${post.cost}</p>
                                 <Link to={"/ItemPage/" + post.slug}><button>Find Out More!</button></Link>
