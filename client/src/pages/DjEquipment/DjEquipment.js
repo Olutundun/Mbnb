@@ -28,7 +28,7 @@ class Drums extends Component {
                 </div>
                 <div className="equipment-div" id="dj-main-background">
                     {this.state.posts.map((post, key) =>
-                        <div className="Parent-div" key={key} >
+                        <div className="Parent-div text-center" key={key} >
                             <img id="image-top" src={post.images} alt="music equipment"></img>
                             <div id="data-div">
                                 <p>{post.itemName}</p>
