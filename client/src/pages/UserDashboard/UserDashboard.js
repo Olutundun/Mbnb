@@ -6,13 +6,15 @@ import "./UserDashboard.css";
 
 class UserDashboard extends Component {
 
-  constructor(props) {
-    super(props);
-    fetch(`/api/items/${this.props.userid}`)
-      .then(response => response.json())
-      .then(posts => (this.setState({ posts }))
-      )
-  }
+    componentDidMount() {
+      this.loadPage();
+    }
+
+    loadPage = () => {
+      axios.get(`/api/items/${this.props.userid}`)
+      .then(res => this.setState({ posts: res.data}))
+    }
+
 // pop up
   submit = (id) => {
     console.log(id);
@@ -44,8 +46,7 @@ class UserDashboard extends Component {
     successfulUpload: false,
     slug: "",
     spinner: false,
-    id: "",
-    new_rental: []
+    id: ""
   }
   slugify = (string) => {
     const a = 'àáäâãåăæąçćčđèéėëêęǵḧìíïîįłḿǹńňñòóöôœøṕŕřßśšșťțùúüûǘůűūųẃẍÿýźžż·/_,:;'
@@ -99,7 +100,7 @@ class UserDashboard extends Component {
   }
 
   handleFormSubmit = (e) => {
-     e.preventDefault();
+    e.preventDefault();
 
     console.log("submitted!")
 
@@ -119,17 +120,10 @@ class UserDashboard extends Component {
     console.log(formData.UserId)
 
     axios.post("api/items", formData)
-      .then(function (response) {
-        console.log(response)
-        //reload
-        window.location.href = "/UserDashboard"
-      }).catch(function (err) {
-        console.log(err)
-        fetch('/api/items')
-          .then(response => response.json())
-          .then(posts => (this.setState({ posts }))
-          )
-      })
+      .then(this.toggle())
+      .then(this.formReset())
+      .then(res => this.loadPage())
+
   }
 
   handleInputChange = event => {
@@ -143,11 +137,21 @@ class UserDashboard extends Component {
   handleDelete = (id) => {
     console.log(id);
     axios.delete("api/items/" + id)
-      .then(function (response) {
-        console.log(response)
-        window.location.reload();
-      })
-  }
+       .then(res => this.loadPage())
+       .catch(err => console.log(err))
+      
+      };
+      formReset = () => {
+        this.setState({
+          itemName: "",
+          itemDescription: "",
+          cost: "",
+          category: "",
+          images: "",
+          contact: "",
+          imageUpload: ""
+        })
+      }
 
   render() {
     var shown = {
@@ -155,8 +159,7 @@ class UserDashboard extends Component {
     };
     var hidden = {
       display: this.state.shown ? "none" : "block"
-    }
-
+    };
     
     return (
       
@@ -204,7 +207,7 @@ class UserDashboard extends Component {
             <div className="text-center">
               <h4>Please fill out some information regarding item you are trying to rent.</h4>
             </div>
-            <form>
+            <form id="my-music-form">
               <div className="container form-group-dark">
                 <label htmlFor="itemName">Item Name</label>
                 <input name="itemName" value={this.state.itemName} onChange={this.handleInputChange} type="name" className="form-control" id="exampleInputItem" aria-describedby="emailHelp" placeholder="Enter Item name"></input>
@@ -248,7 +251,7 @@ class UserDashboard extends Component {
                 <br></br>
                 <br></br>
                 <div className="text-center">
-                  <button onClick={this.handleFormSubmit} type="submit" className="btn btn-lg btn-primary">Submit</button>
+                  <button onClick={this.handleFormSubmit}type="submit" className="btn btn-lg btn-primary">Submit</button>
                 </div>
 
               </div>

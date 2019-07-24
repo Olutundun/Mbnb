@@ -26,3 +26,10 @@
         top: 110px;
     }
 }
+@media screen and (max-width: 475px) {
+    #bass-text {
+        font-size: 3.5rem;
+        position: relative;
+        top: 110px;
+    }
+}

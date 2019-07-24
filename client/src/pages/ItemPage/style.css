@@ -27,9 +27,35 @@
     border-bottom: 1px solid #ffffff;
 }
 
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 750px) {
     #content-body {
         display: block;
+    }
+
+}
+
+@media only screen and (max-width: 515px) {
+    #main-image {
+        height: 22rem;
+    }
+
+}
+@media only screen and (max-width: 475px) {
+    #main-image {
+        height: 20rem;
+    }
+
+}
+@media only screen and (max-width: 376px) {
+    #main-image {
+        height: 18rem;
+    }
+
+}
+@media only screen and (max-width: 321px) {
+    #main-image {
+        height: 16rem;
+        margin-left: 1rem
     }
 
 }

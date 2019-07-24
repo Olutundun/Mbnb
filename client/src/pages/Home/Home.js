@@ -1,17 +1,16 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
+import axios from "axios";
 import React, { Component } from "react";
 import "./Home.css";
 import Slide from "../../components/Slider";
 import { Link } from "react-router-dom";
 
 class Home extends Component {
-    constructor(props) {
-        super(props);
-        fetch('/api/items')
-            .then(response => response.json())
-            .then(posts => (this.setState({ posts }))
-            )
-    }
+   
+    componentDidMount() {
+        axios.get("/api/items")
+          .then(res => this.setState({ posts: res.data}))  
+      }
     state = {
         posts: [],
         itemName: "",
@@ -32,7 +31,7 @@ class Home extends Component {
                     <div id="category-div">
 
                         <div className="img-icon text-center">
-                            <a href="./Amplifiers"><img id="image-1" src="/images/amp.jpg" alt="category"></img></a>
+                            <a href="./Amplifiers"><img id="image-1" src="/images/amp2.jpg" alt="category"></img></a>
                             <h6 className="m-2">Amplifiers</h6>
                         </div>
                         <div className="img-icon text-center">
