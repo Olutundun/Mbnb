@@ -15,7 +15,7 @@ class Signup extends Component {
             redirectTo: null
         }
     }
-    //add form validation
+
     validateForm = () => {
         this.setState({
             errorMsg: ""

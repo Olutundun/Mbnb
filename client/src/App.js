@@ -40,7 +40,7 @@ class App extends Component {
     this.getUser();
   }
   updateUser = (userObj) => {
-    console.log(userObj)
+   // console.log(userObj)
     this.setState(userObj);
   }
   getUser = () => {
@@ -54,9 +54,9 @@ class App extends Component {
         userid: userid
       });
     } else {
-      console.log("GET FROM SERVER");
+     // console.log("GET FROM SERVER");
       axios.get('/api/users').then(response => {
-        console.log(response.data)
+       // console.log(response.data)
         if (response.data.user) {
           console.log("there is a user!")
           this.setState({

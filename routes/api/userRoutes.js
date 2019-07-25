@@ -29,10 +29,17 @@ router.route("/api/users/:id").get((req, res) => {
 router
     .route("/api/signup")
     .post((req, res) => {
-        db.User.create(req.body).then(function (user) {
-            //console.log(user)
-            res.json(user)
-        })
+        db.User.findOne({ where: { email: req.body.email } })
+            .then(function (user) {
+                if (!user) {
+                    db.User.create(req.body).then(function (user) {
+                        //console.log(user)
+                        res.json(user)
+                    })
+                } else {
+                    console.log("user already exists")
+                }
+            })
     })
 router
     .route("/api/signin", passport.authenticate("local"))
