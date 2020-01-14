@@ -213,13 +213,13 @@ class UserDashboard extends Component {
                 <input name="itemName" value={this.state.itemName} onChange={this.handleInputChange} type="name" className="form-control" id="exampleInputItem" aria-describedby="emailHelp" placeholder="Enter Item name"></input>
 
                 <label htmlFor="itemDescription">Item description</label>
-                <input name="itemDescription" value={this.state.itemDescription} onChange={this.handleInputChange} type="description" className="form-control" id="exampleInputDescription" placeholder="Enter Item Description"></input>
+                <input name="itemDescription" value={this.state.itemDescription} onChange={this.handleInputChange} type="description" className="form-control" className="exampleInputDescription" placeholder="Enter Item Description"></input>
 
                 <label htmlFor="cost">Rent per day</label>
-                <input name="cost" value={this.state.cost} onChange={this.handleInputChange} type="description" className="form-control" id="exampleInputDescription" placeholder="Rent per day"></input>
+                <input name="cost" value={this.state.cost} onChange={this.handleInputChange} type="description" className="form-control" className="exampleInputDescription" placeholder="Rent per day"></input>
 
                 <label htmlFor="contact">Contact email for Renters</label>
-                <input name="contact" value={this.state.contact} onChange={this.handleInputChange} type="description" className="form-control" id="exampleInputDescription" placeholder="Contact Email"></input>
+                <input name="contact" value={this.state.contact} onChange={this.handleInputChange} type="description" className="form-control" className="exampleInputDescription" placeholder="Contact Email"></input>
 
                 <label htmlFor="category">Category select</label>
                 <select name="category" value={this.state.category} onChange={this.handleInputChange} className="form-control" id="exampleFormControlSelect1">

@@ -31,7 +31,7 @@ router
     .route("/api/items")
     .post((req, res) => {
         db.Item.create(req.body).then(function (item) {
-            console.log(item)
+            //console.log(item)
             res.json(item)
         })
     })

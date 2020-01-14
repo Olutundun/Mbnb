@@ -45,7 +45,7 @@ router
     .route("/api/signin", passport.authenticate("local"))
     .post((req, res) => {
         db.User.findOne({ where: { username: req.body.username } }).then(function (user) {
-            console.log(user)
+            //console.log(user)
             res.json(user)
         })
             .catch((err) => {
