@@ -26,11 +26,10 @@ class Signin extends Component {
             username: this.state.username,
             password: this.state.password
         }
-        console.log(userData);
+    
         axios.post("/api/signin",
             userData
         ).then(response => {
-            console.log(response)
             const userid = response.data.id;
             const username = response.data.username;
             if (response.status === 200) {

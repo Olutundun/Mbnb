@@ -47,7 +47,7 @@ class App extends Component {
     const user = JSON.parse(sessionStorage.getItem("user"));
     const userid = JSON.parse(sessionStorage.getItem("userid"));
     if (user) {
-      console.log("GET FROM SESSION STORAGE");
+      //console.log("GET FROM SESSION STORAGE");
       this.setState({
         loggedIn: true,
         username: user,
@@ -58,7 +58,7 @@ class App extends Component {
       axios.get('/api/users').then(response => {
        // console.log(response.data)
         if (response.data.user) {
-          console.log("there is a user!")
+          //console.log("there is a user!")
           this.setState({
             loggedIn: true,
             username: response.data.username,
@@ -74,7 +74,6 @@ class App extends Component {
       });
     }
   }
-
 
   render() {
     return (

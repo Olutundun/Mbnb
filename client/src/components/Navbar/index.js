@@ -40,7 +40,7 @@ class Navbar extends Component {
             return <Redirect to={{ pathname: redirect }} />
         }
         const loggedIn = this.props.loggedIn;
-        console.log(this.props);
+        //console.log(this.props);
         return (
             <div>
                 <nav className="navbar nav bg-light nav-pills">
