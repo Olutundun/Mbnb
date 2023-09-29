@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { Component } from "react";
-import "./Keyboards.css";
+//import "./Keyboards.css";
 import { Link } from "react-router-dom";
 
 class Keyboards extends Component {
