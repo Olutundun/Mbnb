@@ -99,7 +99,7 @@ button:hover {
     left: 0;
 }
 
-.previousButton, .nextButton {
+/* .previousButton, .nextButton {
 		position: absolute;
 		top: 50%;
 		transform: translateY(-50%);
@@ -109,11 +109,11 @@ button:hover {
 		height: 32px;
 		text-indent: -9999px;
 		cursor: pointer;
-}
+} */
 
-.previousButton:hover, .nextButton:hover {
+/* .previousButton:hover, .nextButton:hover {
   background: url('http://svgshare.com/i/41_.svg') no-repeat center center / 16px;
-}
+} */
 
 .previousButton {
   left: 0;
